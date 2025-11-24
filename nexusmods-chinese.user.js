@@ -2,7 +2,7 @@
 // @name         NexusMods 中文化插件
 // @namespace    https://github.com/SychO3/nexusmods-chinese
 // @description  仅翻译 Nexus Mods 界面元素为简体中文，不修改 Mod 标题和描述。
-// @version      0.1.2
+// @version      0.1.3
 // @author       SychO
 // @match        https://*.nexusmods.com/*
 // @match        https://nexusmods.com/*
@@ -10,8 +10,9 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
-// @require      https://raw.githubusercontent.com/SychO3/nexusmods-chinese/gh-pages/nexusmods-locals.js
+// @require https://update.greasyfork.org/scripts/556780/1700925/NexusMods%20%E4%B8%AD%E6%96%87%E5%8C%96-%E8%AF%8D%E5%BA%93.js
 // @supportURL   https://github.com/SychO3/nexusmods-chinese/issues
+// @license      MIT
 // ==/UserScript==
 
 (function (window, document, undefined) {
