@@ -2,7 +2,7 @@
 // @name         NexusMods 中文化插件
 // @namespace    https://github.com/SychO3/nexusmods-chinese
 // @description  仅翻译 Nexus Mods 界面元素为简体中文，不修改 Mod 标题和描述。
-// @version      0.1.1
+// @version      0.1.2
 // @author       SychO
 // @match        https://*.nexusmods.com/*
 // @match        https://nexusmods.com/*
@@ -1143,6 +1143,103 @@
   }
 
   /**
+   * 监听站内链接点击，确保页面跳转后能正确翻译
+   * 适用于所有通过链接触发的页面跳转场景
+   */
+  function watchInternalLinks() {
+    document.addEventListener(
+      'click',
+      (event) => {
+        const target = event.target;
+        if (!target) return;
+
+        // 检查是否点击了链接
+        const link = target.closest('a');
+        if (!link || !link.href) return;
+
+        // 只处理站内链接（nexusmods.com 或 users.nexusmods.com）
+        try {
+          const linkUrl = new URL(link.href);
+          const currentHost = window.location.hostname;
+          
+          // 检查是否是 Nexus Mods 站内链接
+          const isNexusModsLink = linkUrl.hostname.includes('nexusmods.com');
+          const isSameHost = linkUrl.hostname === currentHost;
+          
+          if (!isNexusModsLink && !isSameHost) return;
+          
+          // 检查是否是页面内锚点跳转（不需要翻译）
+          if (linkUrl.pathname === window.location.pathname && linkUrl.hash) return;
+
+        } catch (e) {
+          // URL 解析失败，可能是相对路径，继续处理
+        }
+
+        // 检测到站内链接点击，延迟后强制翻译
+        // 使用多个不同的延迟时间，确保能捕获到页面内容
+        const delays = [100, 300, 500, 800, 1200];
+        
+        delays.forEach((delay) => {
+          setTimeout(() => {
+            // 强制重置节流时间戳，确保翻译能够执行
+            lastUrlTranslateAt = 0;
+            updatePageConfig('站内链接跳转');
+            if (document.body) {
+              traverseNode(document.body);
+              hideAds(document.body);
+            }
+            translateTitle();
+          }, delay);
+        });
+      },
+      true // 捕获阶段
+    );
+  }
+
+  /**
+   * Hook History API，监听 SPA 应用的路由变化
+   * 确保使用 pushState/replaceState 的页面跳转也能正确翻译
+   */
+  function hookHistoryAPI() {
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+
+    function afterHistoryChange() {
+      // 使用多个延迟时间进行翻译重试
+      const delays = [50, 150, 300, 600];
+      
+      delays.forEach((delay) => {
+        setTimeout(() => {
+          lastUrlTranslateAt = 0;
+          updatePageConfig('History API 变化');
+          if (document.body) {
+            traverseNode(document.body);
+            hideAds(document.body);
+          }
+          translateTitle();
+        }, delay);
+      });
+    }
+
+    history.pushState = function(...args) {
+      const result = originalPushState.apply(this, args);
+      afterHistoryChange();
+      return result;
+    };
+
+    history.replaceState = function(...args) {
+      const result = originalReplaceState.apply(this, args);
+      afterHistoryChange();
+      return result;
+    };
+
+    // 监听 popstate 事件（浏览器前进/后退按钮）
+    window.addEventListener('popstate', () => {
+      afterHistoryChange();
+    });
+  }
+
+  /**
    * 在 Tampermonkey 菜单中提供简单的配置入口（目前只暴露“广告屏蔽开关”）
    */
   function setupMenuCommands() {
@@ -1202,12 +1299,16 @@
     }
     translateTitle();
 
+    // Hook History API，监听 SPA 路由变化
+    hookHistoryAPI();
     // 监视 DOM 更新
     watchUpdate();
     // 兼容旧账号页面标签栏（Security / Billing 等）
     watchOldNavTabs();
     // 监听表单提交事件
     watchFormSubmissions();
+    // 监听站内链接点击
+    watchInternalLinks();
     // 注册脚本菜单
     setupMenuCommands();
   }

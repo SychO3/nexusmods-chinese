@@ -1996,7 +1996,12 @@
     'You have to be logged in to download files': '你需要登录才能下载文件',
     'Log in to search comments': '登录以搜索评论',
     'Your favourited games will be displayed here': '你收藏的游戏将显示在这里',
-    //'Success!': '成功！',
+    'Please enter your Two-factor Authentication code': '请输入你的两步验证码',
+    'Not you? click here': '不是你？点击这里',
+    'Dont have access to your authenticator app?': '无法使用你的认证应用？',
+    'Verify': '验证',
+    'Incorrect 2FA code': '错误的两步验证码',
+    'Too many attempts. Please try again later.': '尝试次数过多，请稍后再试。',
 
     // 注册
     'Step 1 of 3': '步骤 1 / 3',
