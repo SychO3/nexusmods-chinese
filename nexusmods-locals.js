@@ -2211,7 +2211,15 @@
     // 首页「Mods are now available for ... and XX more new games」整块提示不翻译（新结构，外层 div 无类名）
     'div:has(> span.text-primary-moderate):has(> span:last-child)',
     // 新闻文章正文不翻译（保留作者原创内容）
-    '.news-article'
+    '.news-article',
+    // 模组文章内容不翻译（用户撰写的文章内容）
+    '.article-content',
+    '.mod-article-content',
+    'article .content',
+    // 文章正文区域（通用）
+    '.article-body',
+    '.post-content',
+    '.entry-content'
   ];
 
   // 描述 Tab 内允许翻译的子区域（白名单）
