@@ -809,9 +809,9 @@
     'Last active on': '最后活跃于',
     'Joined on': '加入于',
     'About Me': '关于我',
-    'There\'s nothing here yet': '这里还没有什么内容',
+    'There\'s nothing here yet': '这里暂时还没有内容',
     'All Games': '所有游戏',
-    'No results found': '没有找到结果',
+    'No results found': '未找到任何结果',
     'All': '全部',
     'Supporter Images': '支持者图片',
     'Give Kudos': '点赞',
@@ -2561,6 +2561,13 @@
       '^Updated (\\d{1,2}) (\\w{3}) (\\d{4}), (\\d{1,2}):(\\d{2})$',
       '更新于 {Y}-{M}-{D} {h}:{m}',
       'date_en_dMYhm'
+    ],
+
+    // 认证作者信息："This user is a verified Mod Author and has a total of 15,158 unique downloads across all of their mods."
+    // -> "该用户是认证模组作者，所有模组共有 15,158 次独立下载。"
+    [
+      '^This user is a verified Mod Author and has a total of ([0-9,]+) unique downloads across all of their mods\\.$',
+      '该用户是认证模组作者，所有模组共有 $1 次独立下载。'
     ]
   ];
 })(window);
