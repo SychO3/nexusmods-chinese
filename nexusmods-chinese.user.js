@@ -2,7 +2,7 @@
 // @name         NexusMods 中文化插件
 // @namespace    https://github.com/SychO3/nexusmods-chinese
 // @description  仅翻译 Nexus Mods 界面元素为简体中文，不修改 Mod 标题和描述。
-// @version      0.1.0
+// @version      0.1.1
 // @author       SychO
 // @match        https://*.nexusmods.com/*
 // @match        https://nexusmods.com/*
@@ -201,6 +201,7 @@
    * 处理任意根节点（document.body 或 shadowRoot）上的 DOM 变化
    * - 对 URL 变化做简单节流，避免短时间内多次整页遍历
    * - 将同一批次 mutation 按类型聚合，减少重复遍历与广告查询
+   * - 检测大规模 DOM 变化，触发完整页面翻译（修复表单提交后翻译失效问题）
    */
   function handleMutations(mutations) {
     const currentUrl = window.location.href;
@@ -226,17 +227,23 @@
     const textNodes = new Set();
     const attrTargets = new Set();
     const adRoots = new Set();
+    let totalAddedNodeCount = 0;
+    let totalRemovedNodeCount = 0;
 
     for (const mutation of mutations) {
       if (!mutation) continue;
 
       if (mutation.type === 'childList') {
         if (mutation.addedNodes && mutation.addedNodes.length) {
+          totalAddedNodeCount += mutation.addedNodes.length;
           mutation.addedNodes.forEach((node) => {
             if (!node) return;
             addedNodes.add(node);
             adRoots.add(node);
           });
+        }
+        if (mutation.removedNodes && mutation.removedNodes.length) {
+          totalRemovedNodeCount += mutation.removedNodes.length;
         }
       } else if (mutation.type === 'characterData') {
         if (mutation.target) {
@@ -258,6 +265,26 @@
       }
     }
 
+    // 检测大规模 DOM 变化：如果添加/删除的节点数超过阈值，触发完整页面翻译
+    // 这能解决表单提交后内容大量更新但 URL 不变的情况
+    const LARGE_CHANGE_THRESHOLD = 20; // 节点变化超过20个认为是大规模更新
+    const isLargeChange = (totalAddedNodeCount + totalRemovedNodeCount) >= LARGE_CHANGE_THRESHOLD;
+    
+    if (isLargeChange) {
+      // 大规模变化，对整个页面重新翻译
+      const now = Date.now();
+      if (now - lastUrlTranslateAt > 200) { // 简单节流，避免短时间内多次全页翻译
+        lastUrlTranslateAt = now;
+        if (document.body) {
+          traverseNode(document.body);
+          hideAds(document.body);
+        }
+        translateTitle();
+        return; // 已经完整翻译过了，不需要再处理增量变化
+      }
+    }
+
+    // 正常的增量处理流程
     // 先处理新增整棵子树
     addedNodes.forEach((node) => {
       traverseNode(node);
@@ -859,6 +886,40 @@
   }
 
   /**
+   * 判断元素是否是图标容器（如 Material Icons、Font Awesome 等）
+   */
+  function isIconElement(el) {
+    if (!el || el.nodeType !== Node.ELEMENT_NODE) return false;
+    
+    const classList = el.classList;
+    if (!classList) return false;
+    
+    // 检查常见的图标类名
+    const iconClasses = [
+      'material-icons',
+      'material-icons-outlined',
+      'material-icons-round',
+      'material-icons-sharp',
+      'material-icons-two-tone',
+      'fa',      // Font Awesome
+      'fas',     // Font Awesome Solid
+      'far',     // Font Awesome Regular
+      'fal',     // Font Awesome Light
+      'fab',     // Font Awesome Brands
+      'icon',    // 通用图标类
+      'glyphicon' // Bootstrap Glyphicons
+    ];
+    
+    for (const iconClass of iconClasses) {
+      if (classList.contains(iconClass)) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
+  /**
    * 遍历并翻译节点
    */
   function traverseNode(rootNode) {
@@ -879,6 +940,11 @@
         parentEl.closest &&
         parentEl.closest(CONFIG.IGNORE_SELECTORS)
       ) {
+        return;
+      }
+
+      // 如果父元素是图标容器，则不翻译（图标字体的文本标识符不应被翻译）
+      if (parentEl && isIconElement(parentEl)) {
         return;
       }
 
@@ -1043,6 +1109,40 @@
   }
 
   /**
+   * 监听表单提交，确保提交后的内容更新能被正确翻译
+   * 修复验证码错误等表单提交后翻译失效的问题
+   */
+  function watchFormSubmissions() {
+    document.addEventListener(
+      'submit',
+      (event) => {
+        // 给页面时间处理表单提交和更新内容
+        setTimeout(() => {
+          if (document.body) {
+            traverseNode(document.body);
+            hideAds(document.body);
+          }
+          translateTitle();
+        }, 100);
+
+        // 多次重试翻译，确保动态加载的内容也能被翻译
+        let rerunCount = 0;
+        const maxRerun = 3;
+        const intervalId = setInterval(() => {
+          if (document.body) {
+            traverseNode(document.body);
+          }
+          rerunCount += 1;
+          if (rerunCount >= maxRerun) {
+            clearInterval(intervalId);
+          }
+        }, 300);
+      },
+      true // 捕获阶段
+    );
+  }
+
+  /**
    * 在 Tampermonkey 菜单中提供简单的配置入口（目前只暴露“广告屏蔽开关”）
    */
   function setupMenuCommands() {
@@ -1106,6 +1206,8 @@
     watchUpdate();
     // 兼容旧账号页面标签栏（Security / Billing 等）
     watchOldNavTabs();
+    // 监听表单提交事件
+    watchFormSubmissions();
     // 注册脚本菜单
     setupMenuCommands();
   }

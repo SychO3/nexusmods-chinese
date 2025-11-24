@@ -22,6 +22,7 @@
 
     'Enter your mods now for a chance to win the trip of a lifetime to Las Vegas. Business class flights, VIP shows, and unforgettable adventures await.': '现在上传你的模组，赢取一生一次的拉斯维加斯之旅。商务舱机票、VIP演出和难忘的冒险等待着你。',
     // 搜索框
+    'Search': '搜索',
     'Search mods, games, collections, images & videos': '搜索模组、游戏、合集、图片和视频',
     'Close': '关闭',
     'All content': '所有内容',
@@ -1974,6 +1975,48 @@
     'The mod you were looking for couldn\'t be found': '你正在寻找的模组无法找到',
     'to': '到',
     'No. of endorsements': '支持数量',
+
+    // https://users.nexusmods.com/?goal=*  
+    'Log in to': '登录',
+    'You need to': '你需要',
+    'log in': '登录',
+    'before continuing.': '才能继续。',
+    'Email or Username': '邮箱或用户名',
+    'Password': '密码',
+    'Forgot your': '忘记你的',
+    'Log in': '登录',
+    'Need an account?': '需要一个账户？',
+    'Register here': '点击这里注册',
+    'Show/hide password': '显示/隐藏密码',
+    'Register': '注册',
+    'Log in to view adult content': '登录以查看成人内容',
+    'You have to be logged in to download files': '你需要登录才能下载文件',
+    'Log in to search comments': '登录以搜索评论',
+    'Your favourited games will be displayed here': '你收藏的游戏将显示在这里',
+    //'Success!': '成功！',
+
+    // 注册
+    'Step 1 of 3': '步骤 1 / 3',
+    'Join': '加入',
+    '69 Million': '6900万',
+    'players': '玩家',
+    'Already have an account?': '已经有一个账户？',
+    'Sign in': '登录',
+    'Register for free now or upgrade your experience with extra perks and support Nexus Mods by becoming a': '立即注册免费账户，或升级为高级会员，享受更多特权并支持 Nexus Mods，成为一名',
+    'Premium Member': '高级会员',
+    'Email': '邮箱',
+    'Please see our': '请参阅我们的',
+    'Step 2 of 3': '步骤 2 / 3',
+    'Verify your email address': '验证你的邮箱地址',
+    'Sent Code': '已发送验证码至',
+    'Resend email': '重新发送验证码',
+    'Enter your 4-digit code': '输入你的 4 位验证码',
+    'Didn\'t receive your code?': '没有收到验证码？',
+    'See our help article': '查看我们的帮助文章',
+    'Error': '错误',
+    'Invalid validation code. Please try again.': '无效的验证码，请重试。',
+    'Too many validation attempts. Please try again later.': '验证码尝试次数过多，请稍后再试。',
+    'Popular games': '热门游戏',
 
 
 
