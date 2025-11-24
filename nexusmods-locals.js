@@ -2002,6 +2002,9 @@
     'Verify': '验证',
     'Incorrect 2FA code': '错误的两步验证码',
     'Too many attempts. Please try again later.': '尝试次数过多，请稍后再试。',
+    'Forgot password?': '忘记密码？',
+    'Enter the username or email for your account so we can send you a link to reset your password.': '输入你的用户名或邮箱，我们将发送一个链接来重置你的密码。',
+    'Send email': '发送邮件',
 
     // 注册
     'Step 1 of 3': '步骤 1 / 3',
@@ -2025,6 +2028,13 @@
     'Invalid validation code. Please try again.': '无效的验证码，请重试。',
     'Too many validation attempts. Please try again later.': '验证码尝试次数过多，请稍后再试。',
     'Popular games': '热门游戏',
+    'Step 3 of 3': '步骤 3 / 3',
+    'Create account': '创建账户',
+    'Confirm password': '再次输入密码',
+    'I agree to receive news and information from Nexus Mods by email': '我同意接收 Nexus Mods 的新闻和信息邮件',
+    'By signing up you agree to our': '通过注册，你同意我们的',
+    'Create my account': '创建账户',
+    'Name has already been taken': '用户名已被占用',
 
 
 
