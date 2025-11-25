@@ -1318,7 +1318,7 @@
     'We collect this information to prevent fraud and secure your payment.': '我们收集这些信息以防止欺诈并确保你的支付安全。',
     'You won\'t be charged today and can cancel anytime.': '你今天不会被收费，可以随时取消。',
     'No thanks': '不用了',
-    '(Basic membership).': '(普通用户)。',
+    '(Basic membership).': '(普通用户)',
 
     // https://www.nexusmods.com/stardewvalley/news
     'News & Updates': '新闻和更新',
@@ -1785,6 +1785,19 @@
     'We\'ve donated': '我们已捐赠',
     '$14 million': ' $1400 万美元 ',
     'to our creators to date.': '给我们的创作者迄今为止。',
+    'Start your free trial': '开始免费试用',
+    'Subtotal': '总计',
+    'Saving 17% with yearly': '每年节省 17%',
+    'Tax': '税费',
+    'Total price after trial': '试用后总价',
+    'You will be charged': '将扣费',
+    '$89.99': '$89.99',
+    'after the': '在结束后',
+    '3-day trial': '3 天试用期',
+    'You will be charged every year thereafter while the subscription is active. Cancel any time.':
+    '在订阅持续有效期间，每年都会自动续费。你可以随时取消。',
+    'By continuing with this purchase you agree to the': '通过继续购买，你同意',
+    'of the Premium Membership.': '关于高级会员',
 
     // https://next.nexusmods.com/premium
     'Speed up your': '解锁更好的',
@@ -2479,6 +2492,8 @@
     'Neutral': '中立',
     'Are you sure you want to stop ignoring this user?': '你确定要停止忽略这个用户吗？',
     'You can ignore them again later from this page.': '你可以在以后从本页面再次忽略他们。',
+
+    // 
   });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
