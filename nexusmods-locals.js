@@ -152,7 +152,7 @@
     'All images': '所有图片', 
     'API reference': 'API 参考',
     'Feedback': '反馈',
-    'Report a bug': '报告错误',
+    'Report a bug': '报告漏洞',
     'Add a new report about this mod': '添加关于此模组的新的报告',
     'You have to download this mod before reporting an issue with it': '你必须要先下载这个模组，才能报告关于它的错误',
     ' Make it a private report': '将其设为私人报告',
@@ -216,6 +216,8 @@
     'Explore starter mods': '探索入门模组',
 
     'Buy now': '立即购买',
+    'Mod created': '模组创建',
+    'Action by:': '操作人：',
 
     'Home': '首页',
 
@@ -2475,6 +2477,8 @@
     'Reputation Activity': '声誉活动',
     'Event Reviews': '事件评价',
     'Neutral': '中立',
+    'Are you sure you want to stop ignoring this user?': '你确定要停止忽略这个用户吗？',
+    'You can ignore them again later from this page.': '你可以在以后从本页面再次忽略他们。',
   });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
@@ -2596,12 +2600,15 @@
     '.news-article',
     // 文章正文（模组描述、站点文章等），统一保持原文
     'article',
+    // 论坛 / 文章中的引用块（<figure class="quote col-3-3">...</figure>），保留作者原文
+    'figure.quote',
     // 模组更新日志 / Changelog 列表（保留作者原文）
-    '.log-block',
+    // '.log-block',
     '.change-logs',
+    
 
     // .post-content
-    '.post-content',
+    // '.post-content',
     // 活动流状态行（例如 "MaskPlague and 13 others reacted ..."），保持原文，不翻译
     '.ipsStreamItem_status'
   ];
