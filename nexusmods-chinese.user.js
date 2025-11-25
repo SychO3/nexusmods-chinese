@@ -10,7 +10,7 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
-// @require https://update.greasyfork.org/scripts/556780/1700925/NexusMods%20%E4%B8%AD%E6%96%87%E5%8C%96-%E8%AF%8D%E5%BA%93.js
+// @require https://raw.githubusercontent.com/SychO3/nexusmods-chinese/gh-pages/nexusmods-locals.js
 // @supportURL   https://github.com/SychO3/nexusmods-chinese/issues
 // @license      MIT
 // ==/UserScript==
