@@ -944,13 +944,13 @@
     'Pending DP will be added to your wallet after 90 days': '待入账的 DP 将在 90 天后添加到你的钱包中',
     'SEND DP TO ANOTHER USER': '发送 DP 给其他用户',
     'You are about to send some of your DP to another Nexus Mods user. Once you have done this you will not be able to get the DP back.': '你即将发送一些你的 DP 给另一个 Nexus Mods 用户。一旦你这样做，你将无法收回 DP。',
-    'Select who you want to send money to:': '选择你想发送金钱给的用户：',
+    'Select who you want to send money to:': '选择你想发送的用户：',
     'Search': '搜索',
     'Enter a user name': '输入用户名称',
     'Opt In Your Mods': '选择你的模组',
     'The Donation Points system allows mod authors to accumulate, through unique file page downloads, points that can then be redeemed for rewards through our': '捐赠点系统允许模组作者通过独特的文件页面下载积累点数，然后可以通过我们的',
     'store': '商店',
-    '. Only opted in mods will receive donation points and you can opt in your mods on this page. You also have the option to share your donation points with your friends and other mod authors by using the Share link below. To find out more view': '商店。只有加入的模组会收到捐赠点数，你可以在本页加入你的模组。你也可以通过分享链接与你的朋友和其他模组作者分享你的捐赠点数。要了解更多，请查看',
+    '. Only opted in mods will receive donation points and you can opt in your mods on this page. You also have the option to share your donation points with your friends and other mod authors by using the Share link below. To find out more view': '。只有加入的模组会收到捐赠点数，你可以在本页加入你的模组。你也可以通过分享链接与你的朋友和其他模组作者分享你的捐赠点数。要了解更多，请查看',
     'our FAQ page': '我们的 FAQ 页面',
     'our': '我们的',
     'Donation Point Guidelines': '捐赠点指南',
@@ -969,7 +969,32 @@
     'Enter mod name...': '输入模组名称...',
     'Mods Uploaded By Me': '我上传的模组',
     'Mods Uploaded By Others': '其他用户上传的模组',
+    'Cash out': '提现',
+    'If nothing takes your fancy this month. Swap Donation Points for cold, hard digital cash. Convert DP to your local currency with Paypal.': '如果本月没有你心仪的物品，你也可以将捐赠点数兑换为实实在在的数字现金。通过 Paypal 将 DP 转换为你的本地货币。',    
+    'Charity Donations': '慈善捐赠',
+    'Learn More About DP': '了解更多关于 DP',
+    'My Wallet:': '我的钱包：',
+    'Want to make the world a better place? Use your Donation Points to fund important medical research, wildlife conservation or improving the lives of those less fortunate. Support one of our selected charities to do something good with your modding superpowers.':'想让世界变得更美好吗？你可以使用捐赠点数来资助重要的医学研究、野生动物保护，或帮助改善弱势群体的生活。支持我们精选的慈善机构，用你的模组创作超能力去创造一些真正的善意。',
+    'View Wallet': '查看钱包',
+    'You can buy items from this store using your Donation Points. Your points balance will display in the wallet section on this page. To view previous transactions go to your':'你可以使用捐赠点数从商店购买物品。你的点数余额将显示在钱包部分。要查看之前的交易，请转到你的',
+    'Wallet Page': '钱包页面',
+    'Store': '商店',
+    'Game Keys': '游戏激活码',
+    'Turn your modding efforts into new gaming experiences. We’re offering a limited supply of great value game keys, exclusively to our members. Your next adventure awaits...':'把你的模组创作转化为新的游戏体验吧。我们为会员独家提供数量有限、超值优惠的游戏激活码。你的下一段冒险正在等待……',
+    'Charity Donation': '慈善捐赠',
+    'Featured': '精选',
+    'Product Details': '产品详情',
+    'Terms and Conditions': '条款和条件',
+    'This is a game key for': '这是一个游戏激活码，用于',
+    'and can only be redeemed there.': '，只能在那里兑换。',
+    'Buy Now': '立即购买',
+    'Enter your amount:': '输入你的数量：',
+    'Charity': '慈善',
+    'It looks like you have not set up your PayPal e-mail address, or your current address is invalid. To do that now please go to your': '看起来你还没有设置你的 PayPal 邮箱地址，或者你的当前地址无效。要现在这样做，请转到你的',
+    'donation settings': '捐赠设置',
+    'and add your PayPal email there.': '并添加你的 PayPal 邮箱地址。',
 
+    
     // 站点设置 https://next.nexusmods.com/settings/preferences
     'Preferences': '设置',
     'Settings': '设置',
@@ -1297,13 +1322,13 @@
     'News & Updates': '新闻和更新',
     'Game News': '游戏新闻',
     'Site News': '站点新闻',
-    'By': '作者',
+    'By': '作者 ',
     'Read full article': '阅读全文',
     'Features': '特点',
     'Competition news': '竞赛新闻',
     'Game news': '游戏新闻',
     'Mod news': '模组新闻',
-    'Author': '作者',
+    'Author': '作者 ',
     '24 hrs': '24 小时',
     '30 days': '30 天',
     '1 year': '1 年',
@@ -1690,7 +1715,7 @@
     'This video appears to be spam.': '这个视频似乎是垃圾邮件。',
 
     // https://www.nexusmods.com/stardewvalley/mods/trackingcentre
-    'Authors': '作者',
+    'Authors': '作者 ',
     'Tracked content updates': '关注内容更新',
     'Mods you\'re tracking': '你关注的模组',
     'Last upload': '最后上传',
@@ -1703,7 +1728,7 @@
     'Comments on your files': '你文件的评论',
     'Topic': '主题',
     'Starter': '发起者',
-    'by': '作者',
+    'by': '作者 ',
     'Official comment topic': '官方评论主题',
     'The comment tracking centre lists all the comment and discussion threads related to all your uploaded files on this site. It is listed in the order of the time of the last post, with the most recent post at the top. You have 2 comment topics across all your files.': '评论关注中心列出了所有与你在这个网站上上传的文件相关的评论和讨论主题。它按照最后回复的时间顺序列出，最近的回复在最上面。你在这个网站上的所有文件共有 2 个评论主题。',
     
@@ -2102,10 +2127,354 @@
     'Total DLs:': '总下载量：',
     'Unique DLs:': '独立下载量：',
     'Log in to add topic': '登录以添加主题',
-    'Untracked': '取消关注'
+    'Untracked': '取消关注',
+    'Captcha challenge failed. Please try again. Need help or can\'t see the challenge?': '验证码验证失败，请重试。需要帮助，或无法看到验证内容？',
+    'Troubleshoot login issues': '解决登录问题',
+    // https://help.nexusmods.com/
+    'Categories': '分类',
+    'Policies and Guidelines': '政策和指南',
+    'Important documents regarding the use of Nexus Mods services.': '关于使用 Nexus Mods 服务的相关重要文件。',
+    'Account Settings': '账户设置',
+    'Website Features': '网站功能',
+    'Sort by Default': '默认排序',
+    'Sort A-Z': '按 A-Z 排序',
+    'Sort by Popularity': '按受欢迎度排序',
+    'Sort by Last Updated': '按最后更新排序',
+    'Moderation Policy': '管理政策',
+    'Forum and Commenting Guidelines': '论坛和评论指南',
+    'Adult Content Guidelines': '成人内容指南',
+    'Donation Points System Rules': '捐赠点系统规则',
+    'Donation Options & Guidelines': '捐赠选项和指南',
+    'API Acceptable Use Policy': 'API 可接受使用政策',
+    'Guidelines for Collections': '合集指南',
+    'Premium Membership Terms and Conditions': '高级会员条款和条件',
+    'Best Practices for Mod Authors': '模组作者最佳实践',
+    'File Submission Guidelines': '文件提交指南',
 
-
-
+    // https://forums.nexusmods.com/messenger/
+    'Activity': '活动',
+    'Search...': '搜索...',
+    'Create': '创建',
+    'Everywhere': '所有',
+    'Create new content': '创建新内容',
+    'Messages': '消息',
+    'Inbox': '收件箱',
+    'Add Folder': '添加文件夹',
+    'Select Rows': '选择文件夹',
+    'None': '无',
+    'Select rows based on type': '按类型选择文件夹',
+    'Sort By': '排序方式',
+    'Recently Updated': '最近更新',
+    'Start Time': '开始时间',
+    'Filter By': '按类型过滤',
+    'All Conversations': '所有对话',
+    'Conversations I Started': '我发起的对话',
+    'Conversations Others Started': '其他人发起的对话',
+    'Read': '已读',
+    'Mark all read': '标记所有已读',
+    'Empty': '空',
+    'Compose New': '撰写新消息',
+    'Search messages in this folder...': '搜索此文件夹中的消息...',
+    'There are no messages to display.': '没有消息要显示。',
+    'Search In...': '搜索...',
+    'Recipient name': '收件人名称',
+    'Sender name': '发件人名称',
+    'No message selected': '没有选择消息',
+    'Community Activity': '社区活动',
+    'Mark site read': '标记站点已读',
+    'Add folder': '添加文件夹',
+    'Enter a folder name': '输入文件夹名称',
+    'Can\'t find who you\'re looking for? Visit their Nexus Mods profile page to message them.': '找不到你想找的人？访问他们的 Nexus Mods 个人资料页面与他们联系。',
+    'Insert image from URL': '从 URL 插入图片',
+    'Send': '发送',
+    'Your Current Rank': '当前等级',
+    'My Attachments': '我的附件',
+    'Manage Followed Content': '管理关注的内容',
+    'Ignored Users': '忽略的用户',
+    'Sign Out': '退出登录',
+    'Manage your account settings, and set up social network integration.': '管理你的账户设置，并设置社交网络集成。',
+    'Display Name': '显示名称',
+    'Email Address': '邮箱地址',
+    'Profile Status': '资料状态',
+    'Other Settings': '其他设置',
+    'Notification Settings': '通知设置',
+    'Edit Profile': '编辑资料',
+    'Recently Used Devices': '最近使用的设备',
+    'Content View Behavior': '内容查看行为',
+    'Contact Us': '联系我们',
+    'Powered by Invision Community': '由 Invision Community 提供支持',
+    'Overview': '概览',
+    'When opening content...': '正在打开内容…',
+    'Don\'t load content in the background': '不在后台加载内容',
+    'Take me to the beginning': '回到开头',
+    'Take me to the latest comment': '跳转到最新评论',
+    'Take me to comments I haven\'t read': '跳转到我未读的评论',
+    'Options': '选项',
+    'Your Notifications': '你的通知',
+    'Achievements': '成就',
+    'Notification List': '通知列表',
+    'Newsletter': '新闻通讯',
+    'Followed Content': '关注的内容',
+    'Messenger': '消息',
+    'Mentions & My Content': '提及和我的内容',
+    'Event Reminders': '事件提醒',
+    'Notification Types Available': '可用的通知类型',
+    'We\'ll show you these notifications when you visit the community - just click the bell icon.': '当你访问社区时，我们会显示这些通知 - 只需点击铃铛图标。',
+    'Notifications that we send as an email go to': '我们发送的通知作为电子邮件发送到的地址',
+    'Stop all email notifications': '停止所有电子邮件通知',
+    'These notifications will be sent when you earn a new rank or badge.': '这些通知将在你获得新的等级或勋章时发送。',
+    'Cover Photo': '封面照片',
+    'See my activity': '查看我的活动',
+    'Joined': '已加入',
+    'Last visited': '最后访问',
+    'Your Achievements': '你的成就',
+    'Nexus Mods Profile': 'Nexus Mods 资料',
+    'Currently': '当前',
+    'Recent Profile Visitors': '最近访问者',
+    'The recent visitors block is disabled and is not being shown to other users.': '最近访问者块已禁用，不会显示给其他用户。',
+    'No restrictions being applied': '没有应用限制',
+    'No followers': '没有关注者',
+    'Just now': '刚刚',
+    'Allow others to follow me': '允许其他人关注我',
+    'Don\'t allow others to follow me': '不允许其他人关注我',
+    'When other users follow you, they will be notified when you post new content': '当其他用户关注你时，当你发布新内容时，他们会收到通知',
+    'There are no recent visitors to show': '没有最近访问者要显示',
+    'Configure': '配置',
+    'Are you sure you want to mark all content in the community as read?': '你确定要标记社区中的所有内容为已读吗？',
+    'OK': '确定',
+    'Mark all content on the site as read': '标记站点上的所有内容为已读',
+    'Signed in as': '已登录为',
+    'Updating display name here when': '更新显示名称在这里当',
+    'Nexus Mods username': ' Nexus Mods 用户名 ',
+    'changes': '更改',
+    'Updating email address here when': '更新邮箱地址在这里当',
+    'Nexus Mods email address': ' Nexus Mods 邮箱地址 ',
+    'Use my': '使用我的',
+    'Nexus Mods photo': ' Nexus Mods 照片 ',
+    'as my profile photo': '作为我的资料图片',
+    'Update preferences': '更新设置',
+    'Attachment Quota': '附件配额',
+    'Upload Date': '上传日期',
+    'Filename': '文件名',
+    'Tell a friend': '告诉朋友',
+    'Love Nexus Mods Forums? Tell a friend!': '喜欢 Nexus Mods 论坛？告诉你的朋友！',
+    'Active Topics': '活跃主题',
+    'Popular Game Communities': '热门游戏社区',
+    '· Started': '· 开始于 ',
+    'Game Communities': '游戏社区',
+    'Online Users': '在线用户',
+    'Guidelines': '指南',
+    'Staff': '管理员',
+    'Nexus Mods Hub': 'Nexus Mods 中心',
+    'Modding Discussion': '模组讨论',
+    'The Lounge': '休闲区',
+    'Start new topic': '创建新主题',
+    'Toggle this category': '隐藏此分类',
+    'No posts here yet': '暂无帖子',
+    'posts': '帖子',
+    'Preview available now.': '预览现在可用。',
+    'replies': '回复',
+    'reply': '回复',
+    'views': '查看',
+    'Tagged with:': '标签：',
+    'Posted': '发布于',
+    'Follow': '关注',
+    'Reply to this topic': '回复此主题',
+    'Report': '举报',
+    'Share': '分享',
+    'Go to topic listing': '前往主题列表',
+    'Next unread topic': '下一个未读主题',
+    'Your content will need to be approved by a moderator': '你的内容需要被管理员批准',
+    'Reply to this topic...': '回复此主题...',
+    'Recently Browsing': '最近浏览',
+    'More sharing options...': '更多分享选项...',
+    'Follow this content': '关注此内容',
+    'Site Support': '站点支持',
+    'in': ' 在 ',
+    'Create New Topic': '创建新主题',
+    'Moderator Options': '管理员选项',
+    'After posting...': '发布后...',
+    'Hide topic': '隐藏主题',
+    'Add Tags...': '添加标签...',
+    'Poll': '投票',
+    'Type tags separated by commas.': '输入标签，用逗号分隔。',
+    'Each tag should be at least 2 characters long.': '每个标签至少需要 2 个字符。',
+    'Drag files here to attach, or': '拖动文件到这里附件，或',
+    'choose files...': '选择文件...',
+    'Max total size:': '最大总大小：',
+    'Other Media': '其他媒体',
+    'Insert existing attachment': '插入附件',
+    'Follow topic': '关注主题',
+    'You do not have any existing attachments.': '你没有附件。',
+    'Clear Selection': '清除选择',
+    'Insert Selected': '插入选择',
+    'Submit Topic': '提交主题',
+    'Poll title': '投票标题',
+    'Make voter names public?': '公开投票者名称？',
+    'Automatically close poll on specific date?': '自动关闭投票于特定日期？',
+    'Question title': '问题标题',
+    'Choices': '选项',
+    'Add Choice': '添加选项',
+    'Multiple choice question?': '多选问题？',
+    'Add Question': '添加问题',
+    'Poll close date': '投票关闭日期',
+    'Top Games': '热门游戏',
+    'Mark forum as read': '标记论坛为已读',
+    'Start Date': '开始日期',
+    'Most Viewed': '最受欢迎',
+    'Most Replies': '最多回复',
+    'Custom': '自定义',
+    'Custom Sort': '自定义排序',
+    'Filter': '过滤',
+    'Unlocked': '已解锁',
+    'Popular now': '现在热门',
+    'Moved': '已移动',
+    'Topics I started': '我发起的主题',
+    'Topics I\'ve posted in': '我参与过的主题',
+    'Last post date': '最后回复日期',
+    'Name of last poster': '最后回复者的名称',
+    'Name of topic starter': '主题发起者的名称',
+    'Sort Direction': '排序方向',
+    'Descending (newest first)': '降序（最新优先）',
+    'Ascending (oldest first/alphabetically)': '升序（最旧优先/字母顺序）',
+    'Last Reply': '最后回复',
+    'Anytime': '任何时间',
+    'Today': '今天',
+    // 'Last 5 Days': '最近 5 天',
+    'Page number' : '页码',
+    'Next page': '下一页',
+    'Last page': '最后一页',
+    'Previous page': '上一页',
+    'Last reply by': '最后回复者：',
+    'Who\'s Online': '当前在线用户 ',
+    '(See full list)': '（查看完整列表）',
+    'See who follows this': '查看谁关注了此内容',
+    'Condensed View: Show topics as a list': '紧凑视图：显示主题为列表',
+    'Expanded View: Show topics with a preview of the post': '扩展视图：显示主题及其帖子的预览',
+    'Select Forum': '选择论坛',
+    'Continue': '继续',
+    'Online User List': '在线用户列表',
+    'Logged In': '已登录',
+    'Community Champion': '社区先锋',
+    'Guests': '访客',
+    'Moderators': '版主',
+    'Nothing to show': '暂无内容',
+    'There are no users that match your criteria': '没有符合条件的用户',
+    'Follow member': '关注他',
+    'See their activity': '查看他的活动',
+    'Profile Fields': '资料字段',
+    'Follow this member': '关注此用户',
+    'request': '请求',
+    'follower': '关注者',
+    'All Activity': '所有活动',
+    'Event Comments': '事件评论',
+    'View Profile': '查看资料',
+    'Ignoring a user allows you to block some or all of their content from showing. Users are not notified that you are ignoring them.': '忽略一个用户会隐藏他们的内容和活动对你，包括模组、图片、视频、合集、评论、漏洞报告和通知。忽略的用户仍然可以查看和与你互动的内容。他们不会收到通知，你仍然可以访问他们的资料。',
+    'Add new user to ignore list': '添加新用户到忽略列表',
+    'Enter a member\'s name to set ignore options': '输入一个成员的名字来设置忽略选项',
+    'Users currently being ignored': '当前被忽略的用户',
+    'Mentions': '提及',
+    'There are no results to display.': '没有结果显示。',
+    'Change how the notification is sent': '更改通知发送方式',
+    'Ignore:': '忽略：',
+    'Add User': '添加用户',
+    'Change ignored content': '更改忽略内容',
+    'Stop ignoring user': '停止忽略用户',
+    'Go to inbox': '前往收件箱',
+    'Update Preferences': '更新偏好',
+    'Search the Community': '搜索社区中的内容',
+    'Search Term': '关键词',
+    'Content Search': '内容搜索',
+    'Member Search': '用户搜索',
+    'Search By Tags': '按标签搜索',
+    'Content Type': '内容类型',
+    'Find results in...': '在...中查找结果',
+    'Content titles and body': '内容标题和正文',
+    'Content titles only': '仅内容标题',
+    'Date Created': '创建日期',
+    'Any': '任何',
+    'Last 24 hours': '最近 24 小时',
+    'Last week': '最近一周',
+    'Last month': '最近一个月',
+    'Last six months': '最近六个月',
+    'Last year': '最近一年',
+    'Find results that contain...': '查找包含...的结果',
+    'of my search term words': '单词',
+    'All Content': '所有内容',
+    'Search Content': '搜索内容',
+    'Search By Author': '按作者搜索',
+    'Match term': '匹配关键词',
+    'OR': ' 或 ',
+    'AND': ' 且 ',
+    'Group': '分组',
+    'Search Members': '搜索用户',
+    'Fetching results...': '正在获取结果...',
+    'Subscribe': '订阅',
+    'Create Event': '创建事件',
+    'With All Calendars': '所有日历',
+    'Download iCalendar export': '下载 iCalendar 导出',
+    'Subscribe to iCalendar feed': '订阅 iCalendar 源',
+    'Search Events': '搜索事件',
+    'Online Events': '在线事件',
+    'Physical Events': '现实事件',
+    'Browse By Month': '按月浏览',
+    'No events scheduled this month': '本月没有安排事件',
+    'Modding Events': '模组事件',
+    'All Calendars': '所有日历',
+    'Jump to': '跳转至',
+    'Go to today': '前往今天',
+    'Events happening today': '今天发生的事件',
+    'No events scheduled today': '今天没有安排事件',
+    'Prev Week': '上一周',
+    'Next Week': '下一周',
+    'My Activity Streams': '我的活动流',
+    'Unread Content': '未读内容',
+    'Content I Started': '我发起的活动',
+    'Leaderboard': '排行榜',
+    'Stream Options': '活动流选项',
+    'Set as your default stream': '设置为默认活动流',
+    'Subscribe to RSS feed': '订阅 RSS 源',
+    'This stream auto-updates': '此活动流自动更新',
+    'Condensed': '紧凑',
+    'Expanded': '扩展',
+    'Load more activity': '加载更多活动',
+    'Past hour': '过去一小时',
+    'Past Leaders': '历史领先者',
+    'Top Members': '优秀成员',
+    'Find Content': '查找内容',
+    'All areas': '所有区域',
+    'Year': '年',
+    'Week': '周',
+    'Custom Date': '自定义日期',
+    'Popular Content': '热门内容',
+    'in all areas': '在所有区域中',
+    'Most reputation': '最高声誉',
+    'Most content': '最多内容',
+    'Most posts': '最多帖子',
+    'Member\'s reputation this period': '该成员在本期声誉最高',
+    'Points': '点数',
+    'points': '点数',
+    'There are no members to show': '没有成员显示',
+    'There are no results to show': '没有结果显示',
+    'This leaderboard is set to UTC/GMT+00:00': '此排行榜设置为 UTC/GMT+00:00',
+    'in Events': '在事件中',
+    'in Event Comments': '在事件评论中',
+    'in Topics': '在主题中',
+    'in Posts': '在帖子中',
+    'There are no notifications to display': '没有通知',
+    'View all notifications': '查看所有通知',
+    'You have no notifications': '你没有通知',
+    'Website URL': '网站 URL',
+    'Currently Playing': '当前游玩',
+    'Favourite Game': '收藏游戏',
+    'Choose Photo': '选择照片',
+    'Drag and drop your file here, or': '拖拽文件到这里，或',
+    'Choose Single File...': '选择单个文件...',
+    'Accepted file types': '接受的文件类型',
+    'Reputation': '声誉',
+    'Reputation Activity': '声誉活动',
+    'Event Reviews': '事件评价',
+    'Neutral': '中立',
   });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
@@ -2217,6 +2586,8 @@
     // 标题和摘要都保持原文，不做翻译，避免破坏作者自定义内容
     '.tile-content .tile-name',
     '.tile-content .desc',
+    // 论坛主题标题（例如 "Too many mods"），保持原文
+    '.ipsDataItem_title',
     // 评论正文整体不翻译
     '.comment-content-text',
     // 首页「Mods are now available for ... and XX more new games」整块提示不翻译（新结构，外层 div 无类名）
@@ -2230,7 +2601,9 @@
     '.change-logs',
 
     // .post-content
-    '.post-content'
+    '.post-content',
+    // 活动流状态行（例如 "MaskPlague and 13 others reacted ..."），保持原文，不翻译
+    '.ipsStreamItem_status'
   ];
 
   // 描述 Tab 内允许翻译的子区域（白名单）
@@ -2271,6 +2644,13 @@
       '^Description: (.+)$',
       '描述：$1'
     ],
+
+    // Viewing Topic: *
+    [
+      '^Viewing Topic: (.+)$',
+      '查看主题：$1'
+    ],
+
     // Author: 321
     [
       '^Author: (.+)$',
@@ -2295,6 +2675,11 @@
     [
       '^Max downloads: (.+)$',
       '最大下载量：$1'
+    ],
+    // 1337 users online
+    [
+      '^([0-9,]+) users online$',
+      '$1 位用户在线'
     ],
     // Min endorsements: 300,000
     [
@@ -2426,11 +2811,32 @@
       'date_en_dFY'
     ],
 
+    // 仅日期，完整月份在前（带逗号）："December 11, 2024" -> "2024-12-11"
+    [
+      '^([A-Za-z]+) (\\d{1,2}), (\\d{4})$',
+      '{Y}-{M}-{D}',
+      'date_en_FdY'
+    ],
+
+    // 仅日期，完整月份在前（不带逗号）："November 24 2025" -> "2025-11-24"
+    [
+      '^([A-Za-z]+) (\\d{1,2}) (\\d{4})$',
+      '{Y}-{M}-{D}',
+      'date_en_FdY'
+    ],
+
     // 仅月份和年份："November 2025" / "Nov 2025" -> "2025-11"
     [
       '^([A-Za-z]+) (\\d{4})$',
       '{Y}-{M}',
       'date_en_FY'
+    ],
+
+    // 仅月份 + 日期："November 10" / "Nov 10" -> "11-10"（统一使用数字月份和两位日期）
+    [
+      '^([A-Za-z]+) (\\d{1,2})$',
+      '{M}-{D}',
+      'date_en_Fd'
     ],
 
     // <time class="dst-date-adjust">15 Nov 2025</time>
@@ -2459,6 +2865,50 @@
     [
       '^(\\d{1,2}):(\\d{2})(AM|PM)$',
       '{h}:{m}',
+      'time_en_hmAP'
+    ],
+
+    // 昨天 + 时间："Yesterday at 03:26 AM" -> "昨天 03:26"
+    [
+      '^Yesterday at (\\d{1,2}):(\\d{2})\\s*([AaPp][Mm])$',
+      '昨天 {h}:{m}',
+      'time_en_hmAP'
+    ],
+
+    // 星期几 + 时间："Sunday at 08:55 PM" -> "周日 20:55"
+    [
+      '^Sunday at (\\d{1,2}):(\\d{2})\\s*([AaPp][Mm])$',
+      '周日 {h}:{m}',
+      'time_en_hmAP'
+    ],
+    [
+      '^Monday at (\\d{1,2}):(\\d{2})\\s*([AaPp][Mm])$',
+      '周一 {h}:{m}',
+      'time_en_hmAP'
+    ],
+    [
+      '^Tuesday at (\\d{1,2}):(\\d{2})\\s*([AaPp][Mm])$',
+      '周二 {h}:{m}',
+      'time_en_hmAP'
+    ],
+    [
+      '^Wednesday at (\\d{1,2}):(\\d{2})\\s*([AaPp][Mm])$',
+      '周三 {h}:{m}',
+      'time_en_hmAP'
+    ],
+    [
+      '^Thursday at (\\d{1,2}):(\\d{2})\\s*([AaPp][Mm])$',
+      '周四 {h}:{m}',
+      'time_en_hmAP'
+    ],
+    [
+      '^Friday at (\\d{1,2}):(\\d{2})\\s*([AaPp][Mm])$',
+      '周五 {h}:{m}',
+      'time_en_hmAP'
+    ],
+    [
+      '^Saturday at (\\d{1,2}):(\\d{2})\\s*([AaPp][Mm])$',
+      '周六 {h}:{m}',
       'time_en_hmAP'
     ],
 
@@ -2567,6 +3017,37 @@
       '显示第 $1 到 $2 条，共 $3 条'
     ],
 
+    // Leaderboard 说明："Showing content with the highest reputation since 10/25/25 in Posts"
+    [
+      '^Showing content with the highest reputation since ([0-9/]+) in Posts$',
+      '显示自 $1 起在帖子中的最高声誉内容'
+    ],
+
+    // Showing content with the highest reputation since 10/25/25 in Topics
+    [
+      '^Showing content with the highest reputation since ([0-9/]+) in Topics$',
+      '显示自 $1 起在主题中的最高声誉内容'
+    ],
+
+    // Showing content with the highest reputation since 10/25/25 in Event Comments
+    [
+      '^Showing content with the highest reputation since ([0-9/]+) in Event Comments$',
+      '显示自 $1 起在事件评论中的最高声誉内容'
+    ],
+
+    // Showing content with the highest reputation since 10/25/25 in Events
+    [
+      '^Showing content with the highest reputation since ([0-9/]+) in Events$',
+      '显示自 $1 起在事件中的最高声誉内容'
+    ],
+
+    // Showing content with the highest reputation since 10/25/25 in all areas
+    [
+      '^Showing content with the highest reputation since ([0-9/]+) in all areas$',
+      '显示自 $1 起在所有区域中的最高声誉内容'
+    ],
+
+
     // 修订版本："Revision 96" -> "修订版本 96"
     [
       '^Revision (\\d+)$',
@@ -2591,16 +3072,28 @@
       '你的下载将在 $1 秒后开始。'
     ],
 
+    // 2 reputation points
+    [
+      '^([0-9,]+) reputation points$',
+      '$1 声誉点数'
+    ],
+
     // 作者标记："by RimeNovi" -> "作者 RimeNovi"
     [
       '^by (.+)$',
       '作者 $1'
     ],
 
-    // 欢迎语："Welcome back SychO3" -> "欢迎回来 SychO3"
+    // 欢迎语："Welcome back *" -> "欢迎回来 SychO3"
     [
       '^Welcome back (.+)$',
       '欢迎回来 $1'
+    ],
+
+    // 动态用户名活动提示："* has no recent activity to show" -> "SychO3 最近没有任何活动"
+    [
+      '^(.+) has no recent activity to show$',
+      '$1 最近没有任何活动'
     ],
 
     // 条目数量："1 items" / "3 items" / "1 item" -> "1 条" / "3 条" / "1 条"
@@ -2628,10 +3121,72 @@
       '$1（$2 条评论）'
     ],
 
+    // 帖子数量："70.7k posts" / "859 posts" 等 -> "70.7k 帖子" / "859 帖子"
+    [
+      '^([0-9.,]+k?)\\s+posts$',
+      '$1 帖子'
+    ],
+
     // Kudos 数量："743 kudos" / "1 Kudos" / "2,072 kudos" -> "743 个赞誉" / "1 个赞誉" / "2,072 个赞誉"
     [
       '^([0-9,]+)\\s+[Kk]udos$',
       '点赞数 $1'
+    ],
+
+    // 关注者数量："0 Followers" / "12 followers" -> "0 位关注者" / "12 位关注者"
+    [
+      '^([0-9,]+)\\s+[Ff]ollowers?$',
+      '$1 位关注者'
+    ],
+
+    // 警告点数："0 warning points" / "2 warning points" -> "0 个警告点数" / "2 个警告点数"
+    [
+      '^([0-9,]+) warning points$',
+      '$1 个警告点数'
+    ],
+
+    // "(and 1 more)" / "(and 3 more)" -> "（和另外 1 个）" / "（和另外 3 个）"
+    [
+      '^\\(and ([0-9,]+) more\\)$',
+      '（和另外 $1 个）'
+    ],
+
+    // About SychO3
+    [
+      '^About (.+)$',
+      '关于 $1'
+    ],
+
+    // Viewing Profile: SychO3
+    [
+      '^Viewing Profile: (.+)$',
+      '查看资料：$1'
+    ],
+
+    // 22 profile views
+    [
+      '^([0-9,]+) profile views$',
+      '$1 次资料浏览'
+    ],
+
+    // 0 attachments
+    [
+      '^([0-9,]+) attachments$',
+      '$1 个附件'
+    ],
+
+    // 附件配额使用情况：
+    // "You have used 0 B of your 4.88 MB attachment limit."
+    // -> "你已使用 0 B / 4.88 MB 的附件配额。"
+    [
+      '^You have used ([0-9.,]+\\s*[KMG]?B) of your ([0-9.,]+\\s*[KMG]?B) attachment limit\\.$',
+      '你已使用 $1 / $2 的附件配额。'
+    ],
+
+    // 私信存储配额："Used 0% messenger storage" -> "消息存储空间已使用 0%"
+    [
+      '^Used ([0-9]+)% messenger storage$',
+      '消息存储空间已使用 $1%'
     ],
 
     // <time class="dst-date-adjust">06:31, 16 Nov 2025</time>
@@ -2646,6 +3201,13 @@
     [
       '^(\\d{1,2}) (\\w{3}) (\\d{4}), (\\d{1,2}):(\\d{2})$',
       '{Y}-{M}-{D} {h}:{m}',
+      'date_en_dMYhm'
+    ],
+
+    // 发布时间："Published 19 Nov 2025, 00:07" -> "发布于 2025-11-19 00:07"
+    [
+      '^Published (\\d{1,2}) (\\w{3}) (\\d{4}), (\\d{1,2}):(\\d{2})$',
+      '发布于 {Y}-{M}-{D} {h}:{m}',
       'date_en_dMYhm'
     ],
 
@@ -2668,7 +3230,89 @@
     [
       '^This user is a verified Mod Author and has a total of ([0-9,]+) unique downloads across all of their mods\\.$',
       '该用户是认证模组作者，所有模组共有 $1 次独立下载。'
+    ],
+
+    // Open Community  ·  2830 members
+    [
+      '^Open Community · ([0-9,]+) members$',
+      '开放社区 · $1 位成员'
+    ],
+
+    // 1 member / 2 members
+    [
+      '^([0-9,]+) members?$',
+      ' $1 位成员'
+    ],
+    
+    // Page 1 of 278
+    [
+      '^Page ([0-9,]+) of ([0-9,]+)$',
+      '$1 / $2 页'
+    ],
+
+    // go to page 2
+    [
+      '^Go to page ([0-9,]+)$',
+      '前往第 $1 页'
+    ],
+
+    // 139 Members / 139 Member
+    [
+      '^([0-9,]+) Members?$',
+      '$1 位成员'
+    ],
+    
+    // , 5 Anonymous, 1159 Guests
+    [
+      '^, ([0-9,]+) Anonymous, ([0-9,]+) Guests$',
+      '，$1 位匿名用户，$2 位访客'
+    ],
+
+    // 1 reply / 2 replies
+    [
+      '^([0-9,]+)\\s+repl(?:y|ies)$',
+      '$1 条回复'
+    ],
+    
+
+    // You will receive a notification when karurawasabi posts new content.
+    [
+      '^You will receive a notification when (.+) posts new content\\.$',
+      '你将在 $1 发布新内容时收到通知。'
+    ],
+
+    // Let others see that I follow karurawasabi
+    [
+      '^Let others see that I follow (.+)$',
+      '让其他人看到我关注 $1'
+    ],
+
+    // Follow karurawasabi
+    [
+      '^Follow (.+)$',
+      '关注 $1'
+    ],
+
+    // karurawasabi's Achievements
+    [
+      '^(.+)\'s Achievements$',
+      '$1 的成就'
+    ],
+
+    // Everything posted by karurawasabi
+    [
+      '^Everything posted by (.+)$',
+      '所有由 $1 发布的内容'
     ]
+
+    // Ignoring ArtKing1239
+    [
+      '^Ignoring (.+)$',
+      '忽略 $1'
+    ],
+    
+
+
   ];
 })(window);
 

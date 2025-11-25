@@ -583,6 +583,21 @@
             });
           }
 
+          // 特殊类型 1b 扩展：英文日期（完整月份在前）"December 11, 2024" -> "2024-12-11"
+          if (type === 'date_en_FdY') {
+            const monStr = match[1];
+            const day = parseInt(match[2], 10);
+            const year = match[3];
+
+            const mm = mapFullMonth(monStr);
+            const dd = String(day).padStart(2, '0');
+            return applyDateTemplate(replacement, {
+              year,
+              month: mm,
+              day: dd
+            });
+          }
+
           // 特殊类型 1d：仅月份和年份 "November 2025" / "Nov 2025" -> "2025-11"
           if (type === 'date_en_FY') {
             const monStr = match[1];
@@ -640,6 +655,20 @@
             return applyDateTemplate(replacement, {
               hour: HH,
               minute
+            });
+          }
+
+          // 特殊类型 2c：仅月份 + 日期 "November 10" / "Nov 10" -> "11-10"
+          if (type === 'date_en_Fd') {
+            const monStr = match[1];
+            const day = parseInt(match[2], 10);
+
+            const mm = mapFullMonth(monStr);
+            const dd = String(day).padStart(2, '0');
+
+            return applyDateTemplate(replacement, {
+              month: mm,
+              day: dd
             });
           }
 
