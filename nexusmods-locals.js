@@ -67,6 +67,7 @@
     'Vortex mod manager': "Vortex 模组管理器",
     'The elegant, powerful and open-source mod manager.': '优雅、强大且开源的模组管理器。',
     'Download': '下载',
+    'Login to comment': '登录以评论',
 
     'Media': '媒体',
     'Images': '图片',
@@ -2096,6 +2097,12 @@
     'Our user base continues to grow, as does our need for highly talented and energetic individuals. At Nexus Mods we\'re passionate about supporting modding communities and making modding as easy as possible for gamers worldwide. If you share our passion for gaming and modding then we\'d love to work with you.':'随着用户群持续扩大，我们对高素质且充满活力的人才需求也在不断增长。在 Nexus Mods，我们致力于支持模组社区，并让全球玩家尽可能轻松地进行模组创作与安装。如果你也对游戏和模组抱有同样的热情，我们非常期待与你共事。',
     'Current Positions': '当前职位',
     'If you\'re interested in having a chat with us, get in touch at': '如果你有兴趣与我们聊一聊，请联系我们：',
+    'Some stats could be retrieved at this time': '目前无法获取统计数据',
+
+    'Total DLs:': '总下载量：',
+    'Unique DLs:': '独立下载量：',
+    'Log in to add topic': '登录以添加主题',
+    'Untracked': '取消关注'
 
 
 
@@ -2188,7 +2195,11 @@
     // 导航区域 Vortex 模组管理器推广卡片（nav-card 通用版）
     '.nav-card:has(a[href*="/site/mods/1"])',
     // 支持者图片 Premium 卡片（提示升级账户解锁媒体）
-    'div.w-full.max-w-60.self-start.rounded-lg.border.p-4.border-stroke-subdued:has(a[href*="/account/billing/premium"])'
+    'div.w-full.max-w-60.self-start.rounded-lg.border.p-4.border-stroke-subdued:has(a[href*="/account/billing/premium"])',
+    // 合集/模组页中「更多游戏时间 / 解锁一键自动合集」Premium 大横幅广告卡片
+    'div.relative.rounded-lg.border.border-premium-moderate.bg-gradient-to-t.from-premium-weak.to-premium-900',
+    // Premium 推广页顶部整屏大横幅（背景 diagonals-top.png + 高级会员文案）
+    'div.relative.flex.min-h-screen.w-full.justify-center[style*="premium/promotion-page/diagonals-top.png"]'
   ];
 
   // 不应翻译的区域选择器（例如长描述、Lexical 富文本）
@@ -2211,7 +2222,15 @@
     // 首页「Mods are now available for ... and XX more new games」整块提示不翻译（新结构，外层 div 无类名）
     'div:has(> span.text-primary-moderate):has(> span:last-child)',
     // 新闻文章正文不翻译（保留作者原创内容）
-    '.news-article'
+    '.news-article',
+    // 文章正文（模组描述、站点文章等），统一保持原文
+    'article',
+    // 模组更新日志 / Changelog 列表（保留作者原文）
+    '.log-block',
+    '.change-logs',
+
+    // .post-content
+    '.post-content'
   ];
 
   // 描述 Tab 内允许翻译的子区域（白名单）
@@ -2287,6 +2306,11 @@
       '^Max endorsements: (.+)$',
       '最大支持数：$1'
     ],
+    // Number of endorsements: 3,470
+    [
+      '^Number of endorsements: ([0-9,]+)$',
+      '支持数量：$1'
+    ],
     // Keyword: Seasonal Outfits
     [
       '^Keyword: (.+)$',
@@ -2306,6 +2330,18 @@
     [
       '^(.+) videos$',
       '$1 视频'
+    ],
+    // 竞赛卡片副标题："Competition  •  24 Nov 2025" -> "竞赛  •  2025-11-24"
+    [
+      '^Competition\\s+•\\s+(\\d{1,2}) (\\w{3}) (\\d{4})$',
+      '竞赛  •  {Y}-{M}-{D}',
+      'date_en_dMY'
+    ],
+    // 模组新闻副标题："Mod News  •  20 Nov 2025" -> "模组新闻  •  2025-11-20"
+    [
+      '^Mod News\\s+•\\s+(\\d{1,2}) (\\w{3}) (\\d{4})$',
+      '模组新闻  •  {Y}-{M}-{D}',
+      'date_en_dMY'
     ],
     // 新增文件日期："New files added on: 15 November 2025" -> "在 2025-11-15 添加的新文件"
     [
@@ -2604,6 +2640,13 @@
       '^(\\d{1,2}):(\\d{2}),\\s+(\\d{1,2}) (\\w{3}) (\\d{4})$',
       '{Y}-{M}-{D} {h}:{m}',
       'date_en_GijMY'
+    ],
+
+    // 仅日期+时间（24 小时制）："26 Dec 2021, 03:06" -> "2021-12-26 03:06"
+    [
+      '^(\\d{1,2}) (\\w{3}) (\\d{4}), (\\d{1,2}):(\\d{2})$',
+      '{Y}-{M}-{D} {h}:{m}',
+      'date_en_dMYhm'
     ],
 
     // Uploaded 02 Apr 2016, 10:23 -> 上传于 2016-04-02 10:23
