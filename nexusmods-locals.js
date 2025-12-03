@@ -960,6 +960,16 @@
     'here': '这里',
     'to learn more about how to earn and spend Donation Points.': '了解如何赚取和花费捐赠点数。',
     'View mods you have been opted into': '查看你加入的模组',
+    'Mod Status': '模组状态',
+    'Reward Percentage': '奖励比例',
+    'Actions': '操作',
+    'Opt-In Confirmation': '加入确认',
+    'Share with others': '分享给其他人',
+    'If you would like to share your DP with other users, add their username(s) below and drag the slider to decide what percentage of DP you will share with them. If you have shared DP with them recently you can select their avatar to quickly add them.': '如果你希望与其他用户分享你的 DP，请在下方添加他们的用户名，并拖动滑块决定你将与他们分享多少 DP。如果你最近与他们分享过 DP，你可以选择他们的头像快速添加他们。',
+    'Type user name...': '输入用户名...',
+    'Clear': '清除',
+    'You will receive  100% of the DP for this mod': '你将收到此模组的 100% 的 DP',
+    'Share your DP with one of the following charities:': '与以下慈善机构分享你的 DP：',
     'You don\'t have any mods!': '你还没有任何模组！',
     'By creating mods, and opting them into the rewards system, you can earn rewards!': '通过创建模组，并加入奖励系统，你可以赚取奖励！',
     'Opted-In Status': '加入状态',
@@ -1444,6 +1454,13 @@
     'Translation files': '翻译文件',
     'Compatible with version 1.6': '兼容版本 1.6',
     'Add a mod:': '添加模组：',
+    'Edit your mod details:': '编辑你的模组详情：',
+    'Opt Out': '退出',
+    'Are you sure you want to opt out this mod:': '你确定要退出这个模组吗：',
+    'You, and any users you are sharing donations points with, will no longer receive donation points for this mod if you opt-out.': '你，以及你与任何分享捐赠点的人，如果你退出，将不再收到这个模组的捐赠点。',
+    'You would have received': '你将收到',
+    'for this mod': '这个模组的',
+    'Confirm': '确认',
 
     // 上传翻译
     'Original file your mod is a translation of': '原始文件你的模组是翻译的',
@@ -1641,6 +1658,19 @@
     'ago': '前',
     'Mark all as read (': '标记所有为已读 (',
     'Upload': '上传',
+    'Some files not scanned': '一些文件未扫描',
+    'All changes have been saved': '所有更改已保存',
+    'This is a new version of an existing file (optional)': '这是一个现有文件的新版本（可选）',
+    'Edit, remove or hide existing files by using the options below.': '使用下面的选项编辑、删除或隐藏现有文件。',
+    'Edit existing files': '编辑现有文件',
+    'Edit details': '编辑细节',
+    'Upload new version': '上传新版本',
+    'Set as main Vortex file': '设置为主 Vortex 文件',
+    'Archive': '归档',
+    'Select the file your new file is replacing': '选择你的新文件替换的文件',
+    'Remove the previous version after this file has been successfully uploaded': '在上传成功后删除之前的版本',
+    'You must provide a version for your file.': '你必须提供一个版本用于你的文件。',
+    'Set mod to hidden': '设置模组为隐藏',
 
     // 上传图片 https://www.nexusmods.com/stardewvalley/images/add
     'Adding an image to the nexus': '添加图片到 Nexus',
@@ -2565,8 +2595,56 @@
     'Save Changes': '保存更改',
     'More options for Events': '更多选项用于事件',
     'Last reply by Guest,': '最后回复由访客,',
-    // 
-  });
+    'The elegant, powerful, and open-source mod manager from Nexus Mods.': '来自 Nexus Mods 的优雅、强大且开源的模组管理器。',
+    'Download the latest version now': '下载最新版本',
+    'Vortex File Page': 'Vortex 文件页面',
+    'Why Vortex?': '为什么使用 Vortex？',
+    'Supported Games': '支持的游戏',
+    'Disable my inbox': '关闭收件箱',
+    'Help and Support': '帮助和支持',
+    'MULTI GAME SUPPORT': '多游戏支持',
+    'Removed by author': '被作者删除',
+    'Inform downloaders of this mod\'s requirements before they attempt to download this file': '在下载者尝试下载此文件之前，告知他们此模组的要求',
+    'The mod you were looking for was removed by its author': '你正在寻找的模组已被作者删除',
+    'With mod support for over 30 different games - from Dark Souls, Fallout and Skyrim, to the Witcher series and Stardew Valley - Vortex is the most versatile mod manager available.': '支持超过 30 款不同游戏的模组——从《黑暗之魂》、《辐射》、《上古卷轴》，到《巫师》系列和《星露谷物语》——Vortex 是目前功能最全面的模组管理器。',
+
+    'MOD PROFILES': '模组配置',
+    'Easily set up, switch between, and manage independent mod profiles enabling you to use exactly the combination of mods that you want for a particular playthrough.': '可轻松设置、切换并管理彼此独立的模组配置，让你在每一轮游玩中自由使用自己想要的模组组合。',
+
+    'CLOSE INTEGRATION WITH NEXUSMODS': '与 Nexus Mods 深度集成',
+    'Vortex is designed to seamlessly interact with Nexus Mods allowing you to easily find, install, and play mods from our site, learn about new files and catch the latest news.': 'Vortex 专为与 Nexus Mods 无缝协作而设计，让你能够轻松从我们的网站查找、安装并游玩模组，同时获取最新文件与最新资讯。',
+
+    'MODERN, EASY TO USE UI': '现代易用的用户界面',
+    'Featuring a fully customisable interface, Vortex allows you to quickly and easily access tools and manage your games, plugins, downloads and save games.': '界面支持完全自定义，Vortex 让你能够快速、便捷地访问各类工具，统一管理你的游戏、插件、下载内容与存档。',
+    
+    'MODDING MADE EASY': '让模组更简单',
+    'The built-in auto-sorting system manages your load order and helps you to resolve mod conflicts with powerful, yet easy to use plugin management features.': '内置的自动排序系统可管理你的加载顺序，并通过强大且易用的插件管理功能，帮助你轻松解决模组冲突。',
+
+    'EXTENSIONS AND PLUGINS': '扩展与插件',
+    'Vortex is released under a GPL-3 License giving our community the ability to write extensions and frameworks which can then interact with Vortex, continually adding to its functionality.': 'Vortex 以 GPL-3 许可证开源发布，让社区能够编写扩展与框架并与 Vortex 进行交互，从而不断拓展其功能。',
+
+    'Upgrade to the future of mod management!': '升级，迈向模组管理的未来！',
+    'Download Vortex Now': '立即下载 Vortex',
+    'Moving from NMM or MO?': '从 NMM 或 MO 迁移？',
+    'Find out how': '了解更多',
+    // 'Vortex UI': 'Vortex 界面'
+
+    // https://wiki.nexusmods.com/index.php/Games
+    'View source': '查看源码',
+    'History': '历史',
+    'Search Nexus Mods Wiki': '在 Nexus Mods 百科中搜索',
+    'Content pages': '内容页面',
+    'About Nexus Mods Wiki': '关于 Nexus Mods 百科',
+    'Disclaimers': '免责声明',
+    'Multimedia': '多媒体',
+    'Advanced': '高级',
+    'Special page': '特殊页面',
+    'Knowledge Base': '知识库',
+    'Game Wikis': '游戏百科',
+    'General modding': '通用模组',
+
+
+});
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
   zhCN.home = Object.assign(zhCN.home || {}, {
@@ -3162,6 +3240,12 @@
       '$1 DP 待入账'
     ],
 
+    // Donation Points 选项提示（动态模组名称）
+    [
+      '^You are opting "(.+)" into our Donation Point system\\. You can choose to keep all the DP this mod earns in the future for yourself, or share the DP this mod earns with other users below\\.$',
+      '你正在将 "$1" 加入我们的捐赠点系统。你可以选择保留此模组未来赚取的所有 DP，或者在下方将这些 DP 与其他用户分享。'
+    ],
+
     // 页面响应时间："Served in 1.041s" -> "加载耗时 1.041s"
     [
       '^Served in ([0-9.]+)s$',
@@ -3405,14 +3489,14 @@
     [
       '^Everything posted by (.+)$',
       '所有由 $1 发布的内容'
-    ]
+    ],
 
     // Ignoring ArtKing1239
     [
       '^Ignoring (.+)$',
       '忽略 $1'
-    ],
-    
+    ]
+
 
 
   ];
