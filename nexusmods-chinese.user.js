@@ -84,6 +84,9 @@
     })()
   };
 
+  // 页面原始 window（Tampermonkey 启用 @grant 后脚本运行在沙盒中，需要通过 unsafeWindow 访问站点的全局变量）
+  const PAGE_WINDOW = (typeof unsafeWindow !== 'undefined') ? unsafeWindow : window;
+
   let currentPageType = null;
   let currentDict = {};
   let lastUrl = window.location.href;
@@ -1309,6 +1312,113 @@
   }
 
   /**
+   * Nexus Mods 直接下载功能（合并自 `Nexus Mods 直接下载.js`）
+   * 跳过选择 "Slow Download" / "Fast Download" 的界面
+   */
+  async function download(e) {
+    try {
+      e.preventDefault();
+      const params = new URL(this.href).searchParams;
+      if (params.get('nmm') == '1') {
+        const response = await fetch(this.href);
+        const text = await response.text();
+        const url = text.match(/nxm:\/\/[^'"]+/)[0];
+        location.href = url;
+      } else {
+        const form = new FormData();
+        form.append('fid', params.get('file_id'));
+        form.append('game_id', PAGE_WINDOW.current_game_id);
+        const response = await fetch('https://www.nexusmods.com/Core/Libs/Common/Managers/Downloads?GenerateDownloadUrl', {
+          method: 'POST',
+          body: form
+        });
+        const data = await response.json();
+        location.href = data.url;
+      }
+    } catch (e2) {
+      console.exception(e2);
+      location.href = this.href;
+    }
+  }
+
+  function waitForClass(el, className) {
+    // 如果元素不存在或没有 classList，直接视为已完成，避免报错
+    if (!el || !el.classList) {
+      return Promise.resolve();
+    }
+    if (el.classList.contains(className)) {
+      return Promise.resolve();
+    }
+    return new Promise((resolve) => {
+      const observer = new MutationObserver((muts) => {
+        for (const mut of muts) {
+          if (mut.attributeName === 'class' && el.classList && el.classList.contains(className)) {
+            observer.disconnect();
+            return resolve();
+          }
+        }
+      });
+      observer.observe(el, { attributes: true });
+    });
+  }
+
+  async function processDialog(el) {
+    if (!(el instanceof Element)) {
+      return;
+    }
+    if (!el.classList.contains('mfp-wrap')) {
+      return;
+    }
+    const container = el.querySelector('.mfp-container');
+    if (!container) {
+      return;
+    }
+    await waitForClass(container, 'mfp-s-ready');
+    const btn = container.querySelector('.widget-mod-requirements .btn');
+    if (btn) {
+      btn.addEventListener('click', download);
+    }
+  }
+
+  function setupDirectDownload() {
+    try {
+      if (!PAGE_WINDOW.USER_ID) {
+        return;
+      }
+
+      const icons = [
+        ...document.querySelectorAll('.icon-manual'),
+        ...document.querySelectorAll('.icon-nmm')
+      ];
+      for (const icon of icons) {
+        const el = icon.parentElement;
+        if (!el) continue;
+        if (!el.classList.contains('popup-btn-ajax')) {
+          el.addEventListener('click', download);
+        }
+      }
+
+      const nmmBtn = document.querySelector('#action-nmm .btn');
+      if (nmmBtn && !nmmBtn.classList.contains('popup-btn-ajax')) {
+        nmmBtn.addEventListener('click', download);
+      }
+
+      const observer = new MutationObserver((muts) => {
+        for (const mut of muts) {
+          for (const node of mut.addedNodes) {
+            processDialog(node);
+          }
+        }
+      });
+      if (document.body) {
+        observer.observe(document.body, { childList: true });
+      }
+    } catch (e) {
+      console.warn('NexusMods 中文化插件：初始化直接下载功能失败', e);
+    }
+  }
+
+  /**
    * 初始化
    */
   function init() {
@@ -1339,6 +1449,8 @@
     watchFormSubmissions();
     // 监听站内链接点击
     watchInternalLinks();
+    // 启用 Nexus Mods 直接下载功能
+    setupDirectDownload();
     // 注册脚本菜单
     setupMenuCommands();
   }

@@ -2645,6 +2645,13 @@
     'General modding': '通用模组',
 
 
+    'Support the author': '支持作者',
+    'Donation amount': '捐赠金额',
+    'Mod authors work tirelessly and without financial gain to share their creations with you free of charge on Nexus Mods.': '模组作者辛勤工作，不收取任何费用，免费与你分享他们的创作。',
+    'Show them some love with a voluntary donation,': '用自愿捐赠表达你的爱意，',
+    'of which goes directly to the author and is not handled by Nexus Mods in any way, shape or form.': '其中直接交给作者， Nexus Mods 不会以任何方式、形式处理。',
+
+
 });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
