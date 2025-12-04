@@ -42,44 +42,44 @@
     'My games': '我的游戏',
 
     "Mods": "模组",
-    "All mods": "所有模组",
-    "New": "最新模组",
-    "Trending": "趋势模组",
-    "Most endorsed": "最受支持",
+    "All mods": "全部模组",
+    "New": "最新发布",
+    "Trending": "热门趋势",
+    "Most endorsed": "最多认可",
     "Mod updates": "模组更新",
-    "Tracked mods": "关注的模组",
+    "Tracked mods": "已关注模组",
     "My stuff": "我的内容",
     "My mods": "我的模组",
     "Mod rewards": "模组奖励",
-    "Download history": "下载历史",
+    "Download history": "下载记录",
     "Upload mod": "上传模组",
-    "Modding tutorials": "模组教程",
-    "Learn from the community with tutorials and guides.": "通过社区的教程与指南学习。",
-    "Explore": "探索",
-    "Recent activity": "最近活动",
+    "Modding tutorials": "模组制作教程",
+    "Learn from the community with tutorials and guides.": "通过社区提供的教程与指南学习模组制作。",
+    "Explore": "发现",
+    "Recent activity": "最新动态",
     "Top files": "热门文件",
     "Mod categories": "模组分类",
 
-    'Collections': '合集',
-    'All collections': '所有合集',
-    'Highest rated': '最高评分',
-    'Collections tutorials': "合集教程",
-    'Vortex mod manager': "Vortex 模组管理器",
-    'The elegant, powerful and open-source mod manager.': '优雅、强大且开源的模组管理器。',
-    'Download': '下载',
-    'Login to comment': '登录以评论',
+    "Collections": "合集",
+    "All collections": "全部合集",
+    "Highest rated": "最高评分",
+    "Collections tutorials": "合集教程",
+    "Vortex mod manager": "Vortex 模组管理器",
+    "The elegant, powerful and open-source mod manager.": "优雅、强大且开源的模组管理器。",
+    "Download": "下载",
+    "Login to comment": "登录后评论",
 
-    'Media': '媒体',
-    'Images': '图片',
-    'Latest': '最新',
-    'My images': '我的图片',
-    'Upload image': '上传图片',
-    'Videos': '视频',
-    'My videos': '我的视频',
-    'Upload video': '上传视频',
-    'Supporter images': "支持者图片",
-    'Upgrade your account to unlock all media content.': "升级您的账户以解锁所有媒体内容。",
-    'Upgrade': '升级',
+    "Media": "媒体",
+    "Images": "图片",
+    "Latest": "最新",
+    "My images": "我的图片",
+    "Upload image": "上传图片",
+    "Videos": "视频",
+    "My videos": "我的视频",
+    "Upload video": "上传视频",
+    "Supporter images": "支持者专属图片",
+    "Upgrade your account to unlock all media content.": "升级您的账户以解锁所有媒体内容。",
+    "Upgrade": "升级",
 
     'Community': '社区',
     'Forums': '论坛',
@@ -163,6 +163,15 @@
     'Support Nexus Mods': '支持 Nexus Mods',
     'Go Premium': '升级为高级会员',
     'Search results': '搜索结果',
+    // 'Join us on Discord': '加入我们的 Discord',
+    // 'Follow us on Twitter': '关注我们的 Twitter',
+    // 'Follow us on TikTok': '关注我们的 TikTok',
+    // 'Follow us on Twitch': '关注我们的 Twitch',
+    // 'Follow us on Youtube': '关注我们的 YouTube',
+    // 'Follow us on Instagram': '关注我们的 Instagram',
+    // 'We\'re hiring': '我们正在招聘',
+    // 'View forum messages': '查看论坛消息',
+    // 'Profile image': '个人资料图片',
 
     'Network stats': '数据统计',
     'Network Stats': '数据统计',
@@ -192,7 +201,7 @@
     'View all': '查看全部',
     'View more': '查看更多',
 
-    'Endorse': '支持',
+    'Endorse': '认可',
     'Track': '关注',
 
     'Trending Mods': '趋势模组',
@@ -220,6 +229,8 @@
     'Action by:': '操作人：',
 
     'Home': '首页',
+    'Skip to content': '跳到主要内容',
+    'Nexus Mods home': 'Nexus Mods 主页',
 
     // 某个游戏的模组列表页
     'Browse the internet\'s best mods': '浏览互联网上最好的模组',
@@ -230,12 +241,12 @@
     'Beta now available': 'Beta 现已可用',
     'From': '从',
     'To': '到',
-    "Endorsements": "支持",
+    "Endorsements": "认可数",
     "Date Published": "发布日期",
     "Downloads": "下载量",
     "Unique Downloads": "独立下载量",
     "Last Updated": "最后更新",
-    "Mod Name": "模组名",
+    "Mod Name": "模组名称",
     "File Size": "文件大小",
     "Last Comment": "最新评论",
     "Desc": "降序",
@@ -255,6 +266,7 @@
 
     'Show filters': '显示过滤器',
     'Hide filters': '隐藏过滤器',
+    'Clear game filter': '清除游戏筛选',
 
     'Sort': '排序',
     'Sort results': '排序结果',
@@ -318,19 +330,19 @@
     'Learn more about collections': '了解更多关于合集',
     'Mod manager for installing collections': '模组管理器用于安装合集',
     'Download Vortex': '下载 Vortex',
-    'Game Version': '游戏版本',
-    'Most downloaded': '最受欢迎',
-    'Recently listed': '最近列表',
-    'Total members who liked this content': '喜欢此内容的用户总数',
-    'Total number of downloads': '总下载量',
+    "Game Version": "游戏版本",
+    "Most downloaded": "下载最多",
+    "Recently listed": "最新上架",
+    "Total members who liked this content": "喜欢此内容的用户总数",
+    "Total number of downloads": "总下载量",
     "Essentials": "必备",
     "Themed": "主题",
     "Total Overhaul": "全面改造",
     "Vanilla Plus": "原版增强",
     "Wabbajack Mod List": "Wabbajack 模组列表",
-    'Included Mods': '包含模组',
-    'Browse Mods': '浏览模组',
-    'Hide Adult Content': '隐藏成人内容',
+    "Included Mods": "包含模组",
+    "Browse Mods": "浏览模组",
+    "Hide Adult Content": "隐藏成人内容",
     'Install and organise mods and collections effortlessly with our all-in-one powerful mod manager.': '轻松安装和组织模组和合集，使用我们的一体化强大模组管理器。',
 
     // https://www.nexusmods.com/stardewvalley/mods/1915
@@ -699,7 +711,7 @@
     'Zoom': '缩放',
     'Mod Download History': '模组下载历史',
     'Page Views': '页面浏览量',
-    'Total Endorsements': '总支持',
+    'Total Endorsements': '总认可数',
     'Totals': '总计',
     'DATA GROUPING:': '数据分组：',
     'Auto': '自动',
@@ -807,7 +819,7 @@
 
     // 我的资料 https://next.nexusmods.com/profile/*
     'Edit profile': '编辑资料',
-    'Endorsements Given': '支持',
+    'Endorsements Given': '认可数',
     'Profile Views': '浏览量',
     'Last active on': '最后活跃于',
     'Joined on': '加入于',
@@ -889,7 +901,7 @@
     'Search:': '搜索：',
     'Previous': '上一步',
     'Last DL': '最后下载',
-    'Endorsement': '支持',
+    'Endorsement': '认可',
     'Log': '日志',
     'View': '查看',
     'The following users have invited you to edit their mods.': '以下用户邀请你编辑他们的模组。',
@@ -1529,7 +1541,7 @@
     'Locked (only authors can add reports, everyone can see reports)': '锁定（只有作者可以添加报告，所有人都可以看到报告）',
     'Private (only authors can add and see reports)': '私人（只有作者可以添加和看到报告）',
     'Disabled': '禁用',
-    'Allow users to endorse your file?': '允许用户支持你的文件？',
+    'Allow users to endorse your file?': '允许用户认可你的文件？',
     // 'Yes': '是',
     'Allow users to tag your file?': '允许用户标记你的文件？',
     'Allow members of this site to tag your files with descriptive words so your file can be found easier.': '允许网站成员用描述性词语标记你的文件，以便更容易找到。',
@@ -1683,7 +1695,7 @@
     'Or browse for images': '或者浏览图片',
     'Publishing options': '发布选项',
     'Allow users to comment on this image?': '允许用户评论这张图片？',
-    'Enable endorsements?': '启用支持？',
+    'Enable endorsements?': '启用认可？',
     'Is there adult-only content in this image?': '这张图片有成人内容吗？',
     'Nudity is not permitted.': '裸露是不被允许的。',
     'Do not post images that include: breasts, genitalia, buttocks or characters that are wearing next to nothing. For further information consult our': '不要发布包含：胸部、生殖器、臀部或穿着很少的衣服的角色。有关进一步信息，请咨询我们的',
@@ -1726,14 +1738,14 @@
     'This user\'s image description contains': '该用户的图片描述包含 ',
     'images. Some authors like to showcase more of their work in their image descriptions or use the image description to provide a storyboard for the image provided.': ' 张图片。有些作者喜欢在图片描述中展示更多作品，或通过图片描述为所提供的图片构建一个故事情节。',
     'You will need to be logged in before you can see this user\'s image description.': '你需要登录才能查看该用户的图片描述。',
-    'Latest image endorsers': '最新图片支持者',
-    'Latest video endorsers': '最新视频支持者',
-    'No members have endorsed this video yet': '还没有用户支持这个视频',
-    'No members have endorsed this image yet': '还没有用户支持这个图片',
+    'Latest image endorsers': '最新图片认可者',
+    'Latest video endorsers': '最新视频认可者',
+    'No members have endorsed this video yet': '还没有用户认可这个视频',
+    'No members have endorsed this image yet': '还没有用户认可这个图片',
 
 
     // https://www.nexusmods.com/stardewvalley/videos/*
-    'Endorsed': '支持',
+    'Endorsed': '认可',
     'More videos': '更多视频',
     'About this video': '关于这个视频',
     'Report a video': '报告这个视频',
@@ -1785,23 +1797,23 @@
 
     // https://www.nexusmods.com/*/mods/top
     'Top Lists': '热门列表',
-    'Most endorsed files in the last two weeks': '过去两周最受支持的文件',
-    'Most endorsed recently added files': '最近最受支持的文件',
-    'Most endorsed files of all-time': '所有时间最受支持的文件',
-    'Most endorsed files of all-time (non-adult)': '所有时间最受支持的文件（非成人）',
-    'Most endorsed files of all-time (adult-only)': '所有时间最受支持的文件（成人）',
-    'Top 30 Files in past two weeks:': '过去两周最受支持的30个文件：',
+    'Most endorsed files in the last two weeks': '过去两周最受认可的文件',
+    'Most endorsed recently added files': '最近最受认可的文件',
+    'Most endorsed files of all-time': '所有时间最受认可的文件',
+    'Most endorsed files of all-time (non-adult)': '所有时间最受认可的文件（非成人）',
+    'Most endorsed files of all-time (adult-only)': '所有时间最受认可的文件（成人）',
+    'Top 30 Files in past two weeks:': '过去两周最受认可的30个文件：',
     'Last Update:': '最后更新：',
     'Uploaded: ': '上传于：',
     'You downloaded the most recent version of this mod': '你下载了此模组的最新版本',
     'View image gallery': '查看图片库',
-    'Endorse mod': '支持模组',
-    'Unendorse': '取消支持',
+    'Endorse mod': '认可模组',
+    'Unendorse': '取消认可',
     'Track this mod': '关注此模组',
     'Stop tracking': '停止关注',
     'Forward 30 »': '前进 30 »',
     '« Back 30 ': '« 后退 30 ',
-    'Top 30 recently added files:': '最近最受支持的30个文件：',
+    'Top 30 recently added files:': '最近最受认可的30个文件：',
     'Mods added in past:': '过去添加的模组：',
     'Filter by category:': '按分类过滤：',
 
@@ -1889,7 +1901,7 @@
     'Add a new topic': '添加新主题',
     'Subject': '主题',
     'Topic content': '主题内容',
-    'Official endorsements topic': '官方推荐主题',
+    'Official endorsements topic': '官方认可主题',
     'BANNED': '封禁',
     'This comment has been': '这条评论已被',
     'hidden': '隐藏',
@@ -2053,12 +2065,12 @@
     'You are up-to-date': '已是最新状态',
 
 
-    'Endorsement reminder': '支持提醒',
+    'Endorsement reminder': '认可提醒',
     'You have no unread notifications': '你没有未读通知',
     'Not found': '未找到',
     'The mod you were looking for couldn\'t be found': '你正在寻找的模组无法找到',
     'to': '到',
-    'No. of endorsements': '支持数量',
+    'No. of endorsements': '认可数',
 
     // https://users.nexusmods.com/?goal=*  
     'Log in to': '登录',
@@ -2650,7 +2662,22 @@
     'Mod authors work tirelessly and without financial gain to share their creations with you free of charge on Nexus Mods.': '模组作者辛勤工作，不收取任何费用，免费与你分享他们的创作。',
     'Show them some love with a voluntary donation,': '用自愿捐赠表达你的爱意，',
     'of which goes directly to the author and is not handled by Nexus Mods in any way, shape or form.': '其中直接交给作者， Nexus Mods 不会以任何方式、形式处理。',
+    
 
+    "Endorse collection": "认可合集",
+    "You must first download a collection before you can endorse it.": "您必须先下载该合集，才能进行认可。",
+    "Ok": "确定",
+    "Mod Manager Required": "需要模组管理器",
+    "To easily install mods you need a mod manager (app). If you\’re already using a mod manager, you can ignore this.": "为便捷安装模组，您需要使用模组管理器（应用）。如果您已经在使用模组管理器，可忽略此提示。",
+    "Get Vortex Mod Manager": "获取 Vortex 模组管理器",
+    "Feeling adventurous? Take our new app for a spin!": "想要尝试新体验？立即试用我们的新应用！",
+    "Don't show again": "不再显示",
+    "Continue (requires mod manager)": "继续（需要模组管理器）",
+    'Adding collection...': '添加合集中...',
+
+    'Endorse this mod': '认可此模组',
+    'Abstain from endorsing this mod': '不认可此模组',
+    'Easy install - Highly reliable setup and install.': '轻松安装 -- 高度可靠的设置和安装。',
 
 });
 
@@ -2740,8 +2767,14 @@
     '.nav-card.large-only:has(a[href*="/site/mods/1"])',
     // 导航区域 Vortex 模组管理器推广卡片（nav-card 通用版）
     '.nav-card:has(a[href*="/site/mods/1"])',
+    // 导航区域 / 侧边栏中，带 Premium 升级链接的 nav-card（例如“支持者专属图片 / 升级您的账户以解锁所有媒体内容。”）
+    '.nav-card:has(a[href*="/account/billing/premium"])',
+    // 导航区域 / 侧边栏中，指向建议板（Suggestion Board）的 nav-card（“提供反馈”等）
+    '.nav-card:has(a[href*="/forum/9063-suggestion-board/"])',
     // 支持者图片 Premium 卡片（提示升级账户解锁媒体）
     'div.w-full.max-w-60.self-start.rounded-lg.border.p-4.border-stroke-subdued:has(a[href*="/account/billing/premium"])',
+    // 侧边栏「提供反馈」卡片（与 nav-card 内容类似，只是样式不同）
+    'div.w-full.max-w-60.self-start.rounded-lg.border.p-4.border-stroke-subdued:has(a[href*="/forum/9063-suggestion-board/"])',
     // 合集/模组页中「更多游戏时间 / 解锁一键自动合集」Premium 大横幅广告卡片
     'div.relative.rounded-lg.border.border-premium-moderate.bg-gradient-to-t.from-premium-weak.to-premium-900',
     // Premium 推广页顶部整屏大横幅（背景 diagonals-top.png + 高级会员文案）
@@ -2774,7 +2807,7 @@
     // 新闻文章正文不翻译（保留作者原创内容）
     '.news-article',
     // 文章正文（模组描述、站点文章等），统一保持原文
-    'article',
+    // 'article',
     // 论坛 / 文章中的引用块（<figure class="quote col-3-3">...</figure>），保留作者原文
     'figure.quote',
     // 模组更新日志 / Changelog 列表（保留作者原文）
@@ -2872,17 +2905,17 @@
     // Min endorsements: 300,000
     [
       '^Min endorsements: (.+)$',
-      '最小支持数：$1'
+      '最小认可数：$1'
     ],
     // Max endorsements: 1,000,000
     [
       '^Max endorsements: (.+)$',
-      '最大支持数：$1'
+      '最大认可数：$1'
     ],
     // Number of endorsements: 3,470
     [
       '^Number of endorsements: ([0-9,]+)$',
-      '支持数量：$1'
+      '认可数：$1'
     ],
     // Keyword: Seasonal Outfits
     [
@@ -2914,6 +2947,12 @@
     [
       '^Mod News\\s+•\\s+(\\d{1,2}) (\\w{3}) (\\d{4})$',
       '模组新闻  •  {Y}-{M}-{D}',
+      'date_en_dMY'
+    ],
+    // 站点新闻副标题："Site News  •  1 Dec 2025" -> "站点新闻  •  2025-12-01"
+    [
+      '^Site News\\s+•\\s+(\\d{1,2}) (\\w{3}) (\\d{4})$',
+      '站点新闻  •  {Y}-{M}-{D}',
       'date_en_dMY'
     ],
     // 新增文件日期："New files added on: 15 November 2025" -> "在 2025-11-15 添加的新文件"

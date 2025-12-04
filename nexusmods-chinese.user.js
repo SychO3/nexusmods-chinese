@@ -500,6 +500,43 @@
     const text = normalizeText(raw);
     if (!text) return raw;
 
+    // 特殊处理“前缀 + 分类名称”一类标签：
+    // - "Category: Audio" / "分类：Audio"
+    // - "Excluded: Camera" / "排除：Camera"
+    // 统一让前缀翻译成中文，并对后面的分类名称再走一次词典翻译。
+    const prefixNameMatch =
+      text.match(/^(Category|Excluded):\s+(.+)$/) ||
+      text.match(/^(分类|排除)：\s*(.+)$/);
+
+    if (prefixNameMatch) {
+      const rawPrefix = prefixNameMatch[1];
+      const rawName = prefixNameMatch[2];
+
+      const normPrefix = normalizeText(rawPrefix);
+      const normName = normalizeText(rawName);
+
+      // 前缀映射：允许通过词典覆盖，否则用内置默认
+      const prefixDict = {
+        'Category': '分类',
+        '分类': '分类',
+        'Excluded': '排除',
+        '排除': '排除'
+      };
+
+      let translatedPrefix =
+        currentDict[normPrefix] ||
+        prefixDict[normPrefix] ||
+        rawPrefix;
+
+      let translatedName = currentDict[normName] || rawName;
+      // 如果词典中没有该分类名称，但它本身已经包含非 ASCII 字符（大概率是中文），则保持原样
+      if (!currentDict[normName] && /[^\x00-\x7F]/.test(rawName)) {
+        translatedName = rawName;
+      }
+
+      return `${translatedPrefix}：${translatedName}`;
+    }
+
     // 先尝试完整匹配词典（即使是长文本，只要你在字典里显式配置，就允许翻译）
     const translated = currentDict[text];
     if (translated) {
@@ -1077,6 +1114,55 @@
   }
 
   /**
+   * 补丁：修正顶部全站搜索组件 quick-search 内的 “Search” 文案
+   * 该组件使用 Shadow DOM 渲染，某些浏览器 / 加载时机下通用遍历可能会错过初始文本，
+   * 这里做一次定向兜底，确保按钮文字会被翻译。
+   */
+  const patchedQuickSearchHosts = new WeakSet();
+
+  function patchQuickSearchComponents() {
+    try {
+      const hosts = document.querySelectorAll('quick-search');
+      if (!hosts || hosts.length === 0) return;
+
+      hosts.forEach((host) => {
+        const sr = host.shadowRoot;
+        if (!sr) return;
+
+        // 为该 host 打上已处理标记，避免高频重复遍历
+        if (patchedQuickSearchHosts.has(host)) {
+          return;
+        }
+
+        // 1) 修正按钮上的 “Search” 文案
+        const spans = sr.querySelectorAll('span');
+        spans.forEach((span) => {
+          const original = span.textContent;
+          const norm = normalizeText(original || '');
+          if (!norm || norm.length > CONFIG.MAX_TEXT_LENGTH) return;
+
+          if (norm === 'Search') {
+            const translated = translateText(norm);
+            if (translated && translated !== norm) {
+              span.textContent = translated;
+            }
+          }
+        });
+
+        // 2) 补一次属性翻译（占位符等），用于兜底 placeholder / aria-label
+        const attrTargets = sr.querySelectorAll('input, button');
+        attrTargets.forEach((el) => {
+          translateElementAttributes(el);
+        });
+
+        patchedQuickSearchHosts.add(host);
+      });
+    } catch (e) {
+      console.warn('NexusMods 中文化插件：quick-search 组件补丁失败', e);
+    }
+  }
+
+  /**
    * 监听 DOM 变化 & URL 变化
    */
   function watchUpdate() {
@@ -1085,6 +1171,8 @@
       hideAds(document.body);
       // 补丁：初次挂载时尝试修正 Upload 按钮
       patchUploadButtons();
+      // 补丁：初次挂载时尝试修正 quick-search 搜索按钮
+      patchQuickSearchComponents();
     } else {
       // 兜底：等待 body 出现后再开始监听
       const intervalId = setInterval(() => {
@@ -1095,6 +1183,8 @@
           updatePageConfig('body 就绪');
           // 补丁：body 就绪后再修正一次 Upload 按钮
           patchUploadButtons();
+          // 补丁：body 就绪后再修正一次 quick-search 搜索按钮
+          patchQuickSearchComponents();
         }
       }, 50);
     }
