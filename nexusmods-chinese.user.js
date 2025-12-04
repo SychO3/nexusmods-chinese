@@ -2,7 +2,7 @@
 // @name         NexusMods 中文化插件
 // @namespace    https://github.com/SychO3/nexusmods-chinese
 // @description  仅翻译 Nexus Mods 界面元素为简体中文，不修改 Mod 标题和描述。
-// @version      0.1.3
+// @version      0.2.0
 // @author       SychO
 // @match        https://*.nexusmods.com/*
 // @match        https://nexusmods.com/*
