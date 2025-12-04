@@ -1005,6 +1005,7 @@
     'It looks like you have not set up your PayPal e-mail address, or your current address is invalid. To do that now please go to your': '看起来你还没有设置你的 PayPal 邮箱地址，或者你的当前地址无效。要现在这样做，请转到你的',
     'donation settings': '捐赠设置',
     'and add your PayPal email there.': '并添加你的 PayPal 邮箱地址。',
+    'This mod is opted in to our mod rewards program.': '这个模组已加入我们的模组奖励计划。',
 
     
     // 站点设置 https://next.nexusmods.com/settings/preferences
