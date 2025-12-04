@@ -2812,8 +2812,10 @@
     'div:has(> span.text-primary-moderate):has(> span:last-child)',
     // 新闻文章正文不翻译（保留作者原创内容）
     '.news-article',
-    // 文章正文（模组描述、站点文章等），统一保持原文
-    // 'article',
+    // 文章正文（模组描述、站点文章等），常规段落和列表统一保持原文，
+    // 但保留标题 / 日期等元信息可翻译（例如 Revision 98 + 日期）
+    'article p',
+    'article ul.disc',
     // 论坛 / 文章中的引用块（<figure class="quote col-3-3">...</figure>），保留作者原文
     'figure.quote',
     // 模组更新日志 / Changelog 列表（保留作者原文）
