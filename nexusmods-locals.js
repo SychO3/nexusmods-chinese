@@ -736,7 +736,8 @@
     'DLs': '下载量',
     'Unique': '独立',
     'View changelog': '查看更新日志',
-    'Creator notes': '创作者笔记',
+    'Creator notes': '作者笔记',
+    'First published -': '首次发布 -',
     'Mods by': '模组作者',
     'Revision': '修订 ',
     'Game version': '游戏版本',
@@ -2677,8 +2678,13 @@
 
     'Endorse this mod': '认可此模组',
     'Abstain from endorsing this mod': '不认可此模组',
-    'Easy install - Highly reliable setup and install.': '轻松安装 -- 高度可靠的设置和安装。',
-
+    'Easy install - Highly reliable setup and install.': '轻松安装 - 高度可靠的配置与安装体验。',
+    'Needs more info': '需要更多信息',
+    'commented on': '评论了 ',
+    'Updated since last downloaded': '上次下载后更新',
+    'Bot': '机器人',
+    'This is an official collection.': '这是官方合集',
+    "Highly reliable setup and install.": "高度可靠的配置与安装体验。"
 });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
@@ -3463,6 +3469,12 @@
     [
       '^This user is a verified Mod Author and has a total of ([0-9,]+) unique downloads across all of their mods\\.$',
       '该用户是认证模组作者，所有模组共有 $1 次独立下载。'
+    ],
+
+    // 评论跟踪中心说明（动态评论主题数量）
+    [
+      '^The comment tracking centre lists all the comment and discussion threads related to all your uploaded files on this site\\.\\s+It is listed in the order of the time of the last post, with the most recent post at the top\\. You have ([0-9,]+) comment topics across all your files\\.$',
+      '评论关注中心列出了所有与你在这个网站上上传的文件相关的评论和讨论主题。它按照最后回复的时间顺序列出，最近的回复在最上面。你在这个网站上的所有文件共有 $1 个评论主题。'
     ],
 
     // Open Community  ·  2830 members
