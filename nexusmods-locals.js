@@ -1829,6 +1829,7 @@
     'Not applicable if you cancel before free trial ends.': '如果你在免费试用结束前取消，则不适用。',
     'We\'ve donated': '我们已捐赠',
     '$14 million': ' $1400 万美元 ',
+    '$15 million': ' $1500 万美元 ',
     'to our creators to date.': '给我们的创作者迄今为止。',
     'Start your free trial': '开始免费试用',
     'Subtotal': '总计',
@@ -1843,6 +1844,14 @@
     '在订阅持续有效期间，每年都会自动续费。你可以随时取消。',
     'By continuing with this purchase you agree to the': '通过继续购买，你同意',
     'of the Premium Membership.': '关于高级会员',
+    'Plus more:': '更多：',
+    'Instant, multi-threaded downloads': '即时、多线程下载',
+    '4x more mod results': '4 倍更多模组结果',
+    '5x larger inbox': '5 倍更大收件箱',
+    'Cancel anytime.': '随时取消。',
+    'See refund policy': '查看退款政策',
+    'You will be charged every month thereafter while the subscription is active. Cancel any time.': '在订阅持续有效期间，每月都会自动续费。你可以随时取消。',
+    'Start your free trial': '开始免费试用',
 
     // https://next.nexusmods.com/premium
     'Speed up your': '解锁更好的',
@@ -3081,6 +3090,14 @@
     [
       '^([A-Za-z]+) (\\d{1,2}), (\\d{4})$',
       '{Y}-{M}-{D}',
+      'date_en_FdY'
+    ],
+
+    // Premium 免费试用结束时间："Your free trial ends Dec 9, 2025"
+    // -> "你的免费试用将于 2025-12-09 结束"
+    [
+      '^Your free trial ends ([A-Za-z]+) (\\d{1,2}), (\\d{4})$',
+      '你的免费试用将于 {Y}-{M}-{D} 结束',
       'date_en_FdY'
     ],
 
