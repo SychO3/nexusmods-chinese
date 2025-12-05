@@ -2687,6 +2687,26 @@
     "Highly reliable setup and install.": "高度可靠的配置与安装体验。",
 
     'Open bug report': '打开漏洞报告',
+    'This file is currently being uploaded to our CDN servers. If this is taking longer than expected, please contact a moderator or': '此文件目前正在上传到我们的 CDN 服务器。如果此过程比预期时间长，请联系管理员或',
+    'email us.': '发送邮件给我们。',
+    'Hide mod': '隐藏模组',
+    'Warning: Hidden mods will not earn any Donation Points.': '警告：隐藏模组不会获得任何捐赠点。',
+    'Please select a reason': '请选择原因',
+    'Please select a reason why you\'re hiding': '请选择你隐藏模组的原因',
+    '. It will appear on your hidden mod page and it will be visible to everyone.': '。它将出现在你的隐藏模组页面，并且对所有人可见。',
+    'Temporarily unsupported': '暂时不支持',
+    'Reason:': '原因：',
+    'This mod is currently not supported by the author(s) and/or has issue(s) they are unable to fix yet.': '这个模组目前不被作者支持，或者存在作者无法修复的问题。',
+    'Mod is obsolete': '模组已过时',
+    'Start typing a mod name.': '开始输入模组名称。',
+    'This mod is obsolete and should no longer be used. Please use this mod instead:': '这个模组已过时，不应再使用。请使用这个模组代替：',
+    'Permission/License issue': '权限/许可证问题',
+    'The mod has (possible) permission issues that the author is working to address.': '这个模组可能存在权限问题，作者正在努力解决。',
+    'Updating the mod page': '更新模组页面',
+    'This mod is temporarily unavailable while the mod author updates the mod page information.': '这个模组暂时不可用，因为作者正在更新模组页面信息。',
+    'All notifications were successfully marked as read.': '所有通知已成功标记为已读。',
+    'You have already abstained from endorsing this mod.': '你已经放弃了认可这个模组。',
+    'You have already endorsed this mod.': '你已经认可了这个模组。',
 });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
