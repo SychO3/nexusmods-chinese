@@ -2759,6 +2759,11 @@
     'opted-in to receive Donation Points': '选择接收捐赠点',
     'not': '没有',
     'You must have downloaded this Collection to report a bug': '必须下载这个合集才能报告漏洞',
+
+    'Successfully given kudos.': '点赞成功！',
+    'Successfully removed kudos.': '已取消点赞。',
+    'User successfully tracked.': '已成功关注！',
+    'User successfully untracked.': '已取消关注。',
 });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
