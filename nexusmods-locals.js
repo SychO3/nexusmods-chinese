@@ -1870,12 +1870,19 @@
     'As part of our wellbeing offering, we provide private medical cover through Bupa.': '作为员工健康福利的一部分，我们通过 Bupa 提供私人医疗保险保障。',
     'Pension': '养老金',
     'Helping you save for the future with our company pension scheme.': '通过我们的公司养老金计划，助你为未来稳健储蓄。',
-    'Accessible hiring at Nexus Mods': '',
+    'Accessible hiring at Nexus Mods': 'Nexus Mods 的无障碍招聘',
     'Supporting an incredible community of tens of millions of users, we thrive on engaging as many perspectives as possible to make our platform better. We see no reason why our culture should be any different.': '我们支持着一个拥有数千万用户的卓越社区，并始终致力于倾听尽可能多元的声音，让平台不断变得更好。我们的企业文化，同样如此。',
     'So come and join Nexus Mods — and bring the unique voice that will help us shape the world’s largest mod sharing platform for the better.': '因此，欢迎加入 Nexus Mods，带上你独一无二的声音，一同塑造并提升这个全球最大的模组分享平台。',
     'Nexus Mods is an equal opportunity employer and does not tolerate discrimination of any kind.': 'Nexus Mods 是一家平等机会雇主，绝不容忍任何形式的歧视。',
     'If you require any reasonable adjustment, please contact us at': '如果你需要任何合理的调整，请联系我们：',
     '. In your email, please include the role you’ve applied for, your name, and your preferred way of being contacted.': '。在邮件中，请包含你申请的职位、姓名以及联系方式。',
+    'Remote or hybrid': '远程或混合',
+    'In office': '在办公室',
+    'Backend': '后端',
+    'Business Services': '商业服务',
+    'Frontend': '前端',
+    'Design': '设计',
+    'Product Management': '产品管理',
 
 
 
