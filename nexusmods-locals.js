@@ -1853,6 +1853,33 @@
     'You will be charged every month thereafter while the subscription is active. Cancel any time.': '在订阅持续有效期间，每月都会自动续费。你可以随时取消。',
     'Start your free trial': '开始免费试用',
 
+    // https://www.nexusmods.com/about/careers
+    'Work at Nexus Mods': '在 Nexus Mods 工作',
+    'Our community is built by gamers, creators, and tech enthusiasts and we’re always looking for people who share that passion.': '我们的社区由玩家、创作者和科技爱好者共同构建，我们始终欢迎那些与我们拥有同样热情的人加入。',
+    'Explore open roles': '探索开放职位',
+    'Established in 2001, Nexus Mods is the largest video game modding platform on the internet — a household name in the PC gaming ecosystem. Our mission is to make modding easy by providing a platform for people around the world to share their creations with other gamers.': 'Nexus Mods 成立于 2001 年，是互联网上最大的视频游戏模组平台，也是 PC 游戏生态中的标志性品牌。我们的使命是让模组制作变得更加简单，通过为全球用户提供一个分享创作的平台，让创作者与玩家紧密相连。',
+    'Available jobs': '可用职位',
+    'Benefits of working at Nexus Mods': '在 Nexus Mods 工作的福利',
+    '4 - day work week': '四天工作制',
+    'We strongly believe in work-life balance and work a four-day week with no reduction in pay.': '我们非常重视工作与生活的平衡，实行四天工作制，薪资不打折。',
+    'Holiday': '带薪年假',
+    '25 days of annual leave, including bank holidays. Increases with service.': '每年享有 25 天带薪年假（含法定节假日），并随在职年限逐步增加。',
+    'Gaming credit': '游戏补贴',
+    '£25 / month to spend on games, or your favourite subscriptions.': '每月提供 £25，可用于购买游戏或你喜爱的订阅服务。',
+    'Private medical insurance': '私人医疗保险',
+    'As part of our wellbeing offering, we provide private medical cover through Bupa.': '作为员工健康福利的一部分，我们通过 Bupa 提供私人医疗保险保障。',
+    'Pension': '养老金',
+    'Helping you save for the future with our company pension scheme.': '通过我们的公司养老金计划，助你为未来稳健储蓄。',
+    'Accessible hiring at Nexus Mods': '',
+    'Supporting an incredible community of tens of millions of users, we thrive on engaging as many perspectives as possible to make our platform better. We see no reason why our culture should be any different.': '我们支持着一个拥有数千万用户的卓越社区，并始终致力于倾听尽可能多元的声音，让平台不断变得更好。我们的企业文化，同样如此。',
+    'So come and join Nexus Mods — and bring the unique voice that will help us shape the world’s largest mod sharing platform for the better.': '因此，欢迎加入 Nexus Mods，带上你独一无二的声音，一同塑造并提升这个全球最大的模组分享平台。',
+    'Nexus Mods is an equal opportunity employer and does not tolerate discrimination of any kind.': 'Nexus Mods 是一家平等机会雇主，绝不容忍任何形式的歧视。',
+    'If you require any reasonable adjustment, please contact us at': '如果你需要任何合理的调整，请联系我们：',
+    '. In your email, please include the role you’ve applied for, your name, and your preferred way of being contacted.': '。在邮件中，请包含你申请的职位、姓名以及联系方式。',
+
+
+
+
     // https://next.nexusmods.com/premium
     'Speed up your': '解锁更好的',
     'modding with': '模组体验通过',
