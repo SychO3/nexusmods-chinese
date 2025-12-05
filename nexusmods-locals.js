@@ -216,6 +216,7 @@
     'More time playing your games': '更多游戏时间',
     'Easy install': '轻松安装',
     'Top pick': '最佳选择',
+    'Official': '官方',
 
     'New to modding': '新手上路',
     'Start with the': '从',
@@ -2040,6 +2041,9 @@
     'Utilities for Players': '玩家工具',
     'Stay Home. Make Mods.': '宅家做模组',
 
+    // 杂类
+    '20 Years of Modding 2021': '20 周年 Modding 2021',
+
 
     // 用户状态
     'Banned': '封禁',
@@ -2684,7 +2688,7 @@
     'Updated since last downloaded': '上次下载后更新',
     'Bot': '机器人',
     'This is an official collection.': '这是官方合集',
-    "Highly reliable setup and install.": "高度可靠的配置与安装体验。",
+    "Highly reliable setup and install.": "高度可靠的配置与安装体验",
 
     'Open bug report': '打开漏洞报告',
     'This file is currently being uploaded to our CDN servers. If this is taking longer than expected, please contact a moderator or': '此文件目前正在上传到我们的 CDN 服务器。如果此过程比预期时间长，请联系管理员或',
@@ -2707,6 +2711,11 @@
     'All notifications were successfully marked as read.': '所有通知已成功标记为已读。',
     'You have already abstained from endorsing this mod.': '你已经放弃了认可这个模组。',
     'You have already endorsed this mod.': '你已经认可了这个模组。',
+
+    'Handpicked by Nexus Mods for quality and reliability.': '由 Nexus Mods 精选，品质与可靠性保证',
+    'opted-in to receive Donation Points': '选择接收捐赠点',
+    'not': '没有',
+    'You must have downloaded this Collection to report a bug': '必须下载这个合集才能报告漏洞',
 });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减

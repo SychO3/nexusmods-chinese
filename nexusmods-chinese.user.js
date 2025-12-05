@@ -2,7 +2,7 @@
 // @name         NexusMods 中文化插件
 // @namespace    https://github.com/SychO3/nexusmods-chinese
 // @description  仅翻译 Nexus Mods 界面元素为简体中文，不修改 Mod 标题和描述。
-// @version      0.2.0
+// @version      0.2.1
 // @author       SychO
 // @match        https://*.nexusmods.com/*
 // @match        https://nexusmods.com/*
@@ -502,13 +502,14 @@
     const text = normalizeText(raw);
     if (!text) return raw;
 
-    // 特殊处理“前缀 + 分类名称”一类标签：
+    // 特殊处理“前缀 + 名称”一类标签：
     // - "Category: Audio" / "分类：Audio"
     // - "Excluded: Camera" / "排除：Camera"
+    // - "Badge: Top pick" / "徽章：Top pick"
     // 统一让前缀翻译成中文，并对后面的分类名称再走一次词典翻译。
     const prefixNameMatch =
-      text.match(/^(Category|Excluded):\s+(.+)$/) ||
-      text.match(/^(分类|排除)：\s*(.+)$/);
+      text.match(/^(Category|Excluded|Badge):\s+(.+)$/) ||
+      text.match(/^(分类|排除|徽章)：\s*(.+)$/);
 
     if (prefixNameMatch) {
       const rawPrefix = prefixNameMatch[1];
@@ -522,7 +523,9 @@
         'Category': '分类',
         '分类': '分类',
         'Excluded': '排除',
-        '排除': '排除'
+        '排除': '排除',
+        'Badge': '徽章',
+        '徽章': '徽章'
       };
 
       let translatedPrefix =
@@ -537,6 +540,36 @@
       }
 
       return `${translatedPrefix}：${translatedName}`;
+    }
+
+    // 特殊处理“标签 + 数量”形式的文本，例如：
+    // - "Anime (14)"
+    // - "Chinese (5)"
+    // - "Version 1.6 Compatible (32)"
+    // 这类文本在 UI 上是一个可点击的过滤标签，左边是可翻译的标签名，括号内是数量。
+    // 这里将标签名部分再次交给 translateText 处理（从词典或正则规则中获取翻译），
+    // 数量保持不变，只将圆括号替换为全角中文括号。
+    const labelCountMatch = text.match(/^(.+?)\s*\(\s*([0-9,]+)\s*\)$/);
+    if (labelCountMatch) {
+      const rawLabel = labelCountMatch[1];
+      const count = labelCountMatch[2];
+
+      // 先尝试对标签名本身做一次翻译（会再次走词典与正则规则）
+      const translatedLabel = translateText(rawLabel);
+
+      // 如果翻译结果与原文不同，则认为成功翻译，直接返回“译文（数量）”
+      if (translatedLabel && translatedLabel !== rawLabel) {
+        return `${translatedLabel}（${count}）`;
+      }
+
+      // 如果标签名里本身已经包含非 ASCII 字符（大概率已经是中文或其他本地化文本），
+      // 则不再强行翻译，只统一括号样式。
+      if (/[^\x00-\x7F]/.test(rawLabel)) {
+        return `${rawLabel}（${count}）`;
+      }
+
+      // 默认情况：保持英文标签名，只替换为中文括号，避免完全不翻译导致看起来“不工作”。
+      return `${rawLabel}（${count}）`;
     }
 
     // 先尝试完整匹配词典（即使是长文本，只要你在字典里显式配置，就允许翻译）
