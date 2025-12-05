@@ -404,8 +404,8 @@
     'You can upload this file to other sites but you must credit me as the creator of the file': '你可以将此文件上传到其他网站，但你必须注明我是文件的创作者。',
     'Modification permission': '修改权限',
     'You must get permission from me before you are allowed to modify my files to improve it': '你必须在获得我的许可之前，才能修改我的文件以改进它',
-    'You are allowed to modify my files and release bug fixes or improve on the features without permission from or credit to me': '你被允许修改我的文件并发布错误修复或改进功能，而不需要我的许可或信用。',
-    'You are allowed to modify my files and release bug fixes or improve on the features so long as you credit me as the original creator': '你被允许修改我的文件并发布错误修复或改进功能，只要注明我是原始创作者。',
+    'You are allowed to modify my files and release bug fixes or improve on the features without permission from or credit to me': '你被允许修改我的文件并发布漏洞修复或改进功能，而不需要我的许可或信用。',
+    'You are allowed to modify my files and release bug fixes or improve on the features so long as you credit me as the original creator': '你被允许修改我的文件并发布漏洞修复或改进功能，只要注明我是原始创作者。',
     'Conversion permission': '转换权限',
     'You are not allowed to convert this file to work on other games under any circumstances': '你不得在任何情况下将此文件转换为在其他游戏上工作。',
     'You can convert this file to work with other games as long as you credit me as the creator of the file': '你可以将此文件转换为在其他游戏上工作，只要注明我是文件的创作者。',
@@ -420,7 +420,7 @@
     'You are not allowed to earn Donation Points for your mods if they use my assets': '你不得为使用我的资产的模组赚取捐赠点数',
     'You are allowed to earn Donation Points for your mods if they use my assets': '你被允许为使用我的资产的模组赚取捐赠点数',
     'You must get permission to earn Donation Points for your mods if they use my assets': '如果你的模组使用了我的素材，你必须获得我的许可才能赚取捐赠点数',
-    'You are not allowed to modify my files, including creating bug fixes or improving on features under any circumstances': '你不得修改我的文件，包括创建错误修复或改进功能，在任何情况下。',
+    'You are not allowed to modify my files, including creating bug fixes or improving on features under any circumstances': '你不得修改我的文件，包括创建漏洞修复或改进功能，在任何情况下。',
     'You are not allowed to use assets from this file under any circumstances': '你不得在任何情况下使用此文件中的资产。',
     'Author notes': '作者备注',
     'This author has not provided any additional notes regarding file permissions': '这个作者没有提供任何关于文件权限的额外备注',
@@ -657,7 +657,7 @@
     'Trolling or harassment': '嘲讽或骚扰',
     'Malicious/disreputable link(s)': '恶意/不良链接',
     'Content links to site or has attachment that can be harmful.': '内容链接到站点或附件可能有害。',
-    'This collection bug report appears to be spam.': '这个合集报告似乎是垃圾内容。',
+    'This collection bug report appears to be spam.': '这个合集漏洞报告似乎是垃圾内容。',
     'Breaks the rules set by Nexus Mods.': '违反 Nexus Mods 的规则。',
     'Describe your issue in as much detail as possible and a moderator will review the case': '尽可能详细地描述你的问题，管理员将审查此案例',
     '(Required)': '(必填)',
@@ -694,7 +694,7 @@
     'Date': '日期',
     'Last reply': '最后回复',
     'Order': '排序',
-    'Bug title': '标题',
+    'Bug title': '漏洞标题',
     'Last post': '最后回复',
     'Replies': '回复',
     'Loading issue...': '加载问题...',
@@ -1078,7 +1078,7 @@
     'Select tags to block. They can be global or game specific.': '选择标签屏蔽。它们可以是全局或游戏特定的。',
     'Global tags': '全局标签',
     'Ignored users': '忽略用户',
-    'Ignoring a user hides their content and activity form you, including mods, images, videos, collections, comments, bug reports, and notifications.': '忽略一个用户会隐藏他们的内容和活动对你，包括模组、图片、视频、合集、评论、错误报告和通知。',
+    'Ignoring a user hides their content and activity form you, including mods, images, videos, collections, comments, bug reports, and notifications.': '忽略一个用户会隐藏他们的内容和活动对你，包括模组、图片、视频、合集、评论、漏洞报告和通知。',
     'Ignored users can still view and interact with your content. They won\'t be notified, and you can still access their profile.': '忽略的用户仍然可以查看和与你互动的内容。他们不会收到通知，你仍然可以访问他们的资料。',
     'No ignored users': '没有忽略用户',
     'Add a user you want to ignore': '添加你想要忽略的用户',
@@ -1571,7 +1571,7 @@
     'Give permission for users to upload my files on other sites?': '允许用户在其他网站上传我的文件？',
     'Yes, but you must credit me as the creator of the file': '是，但你必须注明我是文件的创作者',
     'Give permission for users to convert my mod to work in other games?': '允许用户将我的模组转换为在其他游戏中工作？',
-    'Give permission for users to modify my file; including releasing bug fixes or improving on the features my file adds to the game, and upload it as a separate file?': '允许用户修改我的文件；包括发布错误修复或改进我的文件添加到游戏的功能，并将其上传为单独的文件？',
+    'Give permission for users to modify my file; including releasing bug fixes or improving on the features my file adds to the game, and upload it as a separate file?': '允许用户修改我的文件；包括发布漏洞修复或改进我的文件添加到游戏的功能，并将其上传为单独的文件？',
     'Yes, no credit or permission needed': '是，不需要信用或权限',
     'Yes, but you must credit me as the original creator': '是，但你必须注明我是原始创作者',
     'Not without permission from me first': '没有我的许可之前不行',
@@ -2684,7 +2684,9 @@
     'Updated since last downloaded': '上次下载后更新',
     'Bot': '机器人',
     'This is an official collection.': '这是官方合集',
-    "Highly reliable setup and install.": "高度可靠的配置与安装体验。"
+    "Highly reliable setup and install.": "高度可靠的配置与安装体验。",
+
+    'Open bug report': '打开漏洞报告',
 });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
@@ -3556,6 +3558,12 @@
     [
       '^Ignoring (.+)$',
       '忽略 $1'
+    ],
+
+    // e.g. "3 - DELETED has been deleted." -> "3 - DELETED 已被删除。"
+    [
+      '^(.+?) has been deleted\\.$',
+      '$1 已被删除。'
     ]
 
 
