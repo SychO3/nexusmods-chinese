@@ -218,12 +218,13 @@
     'Top pick': '最佳选择',
     'Official': '官方',
 
-    'New to modding': '新手上路',
+    'New to modding': '新手上路 ',
     'Start with the': '从',
     'essential starter mods': '必备的入门模组',
     'and helpful tools to begin your journey.': '和有用的工具开始你的旅程。',
     'Dismiss': '忽略',
     'Explore starter mods': '探索入门模组',
+    'mods': ' 模组',
 
     'Buy now': '立即购买',
     'Mod created': '模组创建',
@@ -2085,7 +2086,15 @@
     'Stay Home. Make Mods.': '宅家做模组',
 
     // 杂类
-    '20 Years of Modding 2021': '20 周年 Modding 2021',
+    '20 Years of Modding 2021': '模组20周年（2021）',
+    'Animations': '动画',
+    'Appearance': '外观',
+    'Armour and Clothing': '护甲与服装',
+    'Modders Resources': '模组作者资源',
+    'Scripts': '脚本',
+    'Utilities': '实用工具',
+    'Vehicles': '载具',
+    'Weapons': '武器',
 
 
     // 用户状态
@@ -2781,6 +2790,44 @@
     'Mod untracked': '已取消关注',
     'Mod endorsed': '已认可',
     'Mod unendorsed': '已取消认可',
+
+    // 游戏类型
+    'Action': '动作',
+    'Adventure': '冒险',
+    'ARPG': '动作角色扮演',
+    'Dungeon crawl': '地下城探索',
+    'Fighting': '格斗',
+    'FPS': '第一人称射击',
+    'Hack and Slash': '砍杀动作',
+    'Indie': '独立游戏',
+    'Metroidvania': '银河战士类',
+    'MMORPG': '大型多人在线角色扮演',
+    'Platformer': '平台跳跃',
+    'Puzzle': '解谜',
+    'Racing': '赛车',
+    'Roguelike': '肉鸽',
+    'RPG': '角色扮演',
+    'Sandbox': '沙盒',
+    'Simulation': '模拟',
+    'Space sim': '太空模拟',
+    'Sports': '体育',
+    'Stealth': '潜行',
+    'Survival': '生存',
+    'Third-Person Shooter': '第三人称射击',
+    'Visual Novel': '视觉小说',
+    'Strategy': '策略',
+
+    'Show games with Collections': '显示有合集的游戏',
+    'Get started with the essential mods.': '从必备的模组开始你的旅程。',
+    'Get starter mods': '获取入门模组',
+    'Quick start - skip the steps': '快速开始 - 跳过步骤',
+    'Get started with': '从此开始 ',
+    'Install a curated set of mods to get started fast': '安装精选的模组集合，快速开始',
+    'Collections are a quick way to install a group of mods that "just work".': '合集是一种快速安装一整组“即装即用”模组的方式。',
+    'Prefer to mod manually?': '更喜欢手动模组？',
+
+
+
 });
 
   // 首页相关（/ 或 /site），先只保留一组示例，后续可按需增减
