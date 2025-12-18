@@ -2,7 +2,7 @@
 // @name         NexusMods 中文化插件
 // @namespace    https://github.com/SychO3/nexusmods-chinese
 // @description  仅翻译 Nexus Mods 界面元素为简体中文，不修改 Mod 标题和描述。
-// @version      0.2.1
+// @version      0.2.2
 // @author       SychO
 // @match        https://*.nexusmods.com/*
 // @match        https://nexusmods.com/*
@@ -18,6 +18,41 @@
 (function (window, document, undefined) {
   'use strict';
 
+  /**
+   * 过滤/拼接 CSS 选择器列表（容错：遇到浏览器不支持的选择器语法，例如旧版不支持 :has()，会跳过该条）
+   * 避免因为某一条选择器语法错误导致 `matches/querySelectorAll/closest` 直接抛错、整段逻辑失效。
+   */
+  function filterValidSelectors(selectors, label) {
+    if (!Array.isArray(selectors)) return [];
+    const testEl = document && document.createElement ? document.createElement('div') : null;
+    const valid = [];
+
+    for (const sel of selectors) {
+      if (typeof sel !== 'string') continue;
+      const s = sel.trim();
+      if (!s) continue;
+
+      if (!testEl || !testEl.matches) {
+        valid.push(s);
+        continue;
+      }
+
+      try {
+        // `matches` 仅用于验证选择器语法是否可解析
+        testEl.matches(s);
+        valid.push(s);
+      } catch (e) {
+        console.warn('NexusMods 中文化插件：无效选择器已忽略', label || '', s, e);
+      }
+    }
+
+    return valid;
+  }
+
+  function joinValidSelectors(selectors, label) {
+    return filterValidSelectors(selectors, label).join(',');
+  }
+
   const CONFIG = {
     LANG: 'zh-CN',
     // 忽略翻译的区域：
@@ -27,16 +62,16 @@
       try {
         const conf = window.NEXUS_I18N && window.NEXUS_I18N.conf;
         if (conf && Array.isArray(conf.ignoreSelectors) && conf.ignoreSelectors.length > 0) {
-          return conf.ignoreSelectors.join(',');
+          return joinValidSelectors(conf.ignoreSelectors, 'conf.ignoreSelectors');
         }
       } catch (e) {
         // ignore
       }
       // 本地兜底（如果词典未提供 ignoreSelectors）
-      return [
+      return joinValidSelectors([
         '.mod_description_container', // <div class="container mod_description_container condensed">
         '.prose-lexical.prose'        // Lexical 富文本区域（例如合集日志正文）
-      ].join(',');
+      ], 'default.ignoreSelectors');
     })(),
     // 在 <div class="container tab-description"> 里，允许翻译的子区域
     // 其它子区域一律不翻译
@@ -44,18 +79,18 @@
       try {
         const conf = window.NEXUS_I18N && window.NEXUS_I18N.conf;
         if (conf && Array.isArray(conf.descTabAllowSelectors) && conf.descTabAllowSelectors.length > 0) {
-          return conf.descTabAllowSelectors.slice();
+          return filterValidSelectors(conf.descTabAllowSelectors, 'conf.descTabAllowSelectors');
         }
       } catch (e) {
         // ignore
       }
       // 本地兜底列表
-      return [
+      return filterValidSelectors([
         '#description_tab_h2',
         '.modhistory.inline-flex',
         '.actions.clearfix',
         '.accordionitems'
-      ];
+      ], 'default.descTabAllowSelectors');
     })(),
     // 超过该长度的文本节点不尝试翻译，以降低误伤长段文字的概率
     // 默认 200 对绝大部分 UI 足够，但会挡住某些稍长的提示文本（例如评论跟踪中心那一整段说明）
@@ -68,13 +103,13 @@
       try {
         const conf = window.NEXUS_I18N && window.NEXUS_I18N.conf;
         if (conf && Array.isArray(conf.adSelectors) && conf.adSelectors.length > 0) {
-          return conf.adSelectors.join(',');
+          return joinValidSelectors(conf.adSelectors, 'conf.adSelectors');
         }
       } catch (e) {
         // ignore
       }
       // 本地兜底列表（如果词典未提供 adSelectors）
-      return [
+      return joinValidSelectors([
         '[data-testid^="ad-"]',
         '.ad-container',
         '.ad-slot',
@@ -82,7 +117,7 @@
         '.premium-upsell-banner',
         '.new-new-premium-banner',
         '#freeTrialBanner'
-      ].join(',');
+      ], 'default.adSelectors');
     })()
   };
 
@@ -176,8 +211,17 @@
     childList: true,
     subtree: true,
     characterData: true,
-    // 监听常见可翻译属性 + style（用于重新隐藏被脚本改样式显示出来的广告）
-    attributeFilter: ['value', 'placeholder', 'aria-label', 'title', 'data-original-title', 'style']
+    // 监听常见可翻译属性 + (style/class/id 用于广告可见性变化兜底)
+    attributeFilter: [
+      'value',
+      'placeholder',
+      'aria-label',
+      'title',
+      'data-original-title',
+      'style',
+      'class',
+      'id'
+    ]
   };
 
   // 已经挂过观察器的根节点（document.body 或各个 shadowRoot）
@@ -187,8 +231,9 @@
     BLOCK_ADS: 'nexusmods_chinese_block_ads'
   };
 
-  // 最近一次因为 URL 变化而触发整页翻译的时间戳，用于简单节流
-  let lastUrlTranslateAt = 0;
+  // 整页重翻译调度器：对同一延迟的请求做去重，避免多处触发导致重复全页遍历
+  // key: delay(ms) -> { timerId, refreshConfig, trigger }
+  const pendingFullTranslateByDelay = new Map();
 
   function loadConfigFromStorage() {
     try {
@@ -204,8 +249,98 @@
   }
 
   /**
+   * 刷新页面类型与词典（仅更新配置与缓存，不做 DOM 遍历）
+   */
+  function updatePageConfig(trigger) {
+    const newType = detectPageType();
+    const pageTypeChanged = newType !== currentPageType;
+
+    // 无论页面类型是否为 null，都更新当前类型并重建词典（至少保证 public 生效）
+    currentPageType = newType;
+    buildPageDict(currentPageType);
+
+    // 页面配置变化时清空翻译相关缓存，避免旧页面结果干扰新页面
+    translationCache.clear();
+    textNodeCache = new WeakMap();
+
+    if (pageTypeChanged) {
+      console.log(`NexusMods 中文化插件：${trigger} 触发，页面类型 = ${currentPageType || 'unknown'}`);
+    }
+  }
+
+  /**
+   * 执行一次“整页重翻译”：可选先刷新页面配置，然后遍历 DOM/隐藏广告/翻译标题/跑补丁
+   */
+  function runFullTranslate(trigger, options) {
+    const opts = options || {};
+
+    try {
+      if (opts.refreshConfig) {
+        updatePageConfig(trigger);
+      }
+
+      if (document.body) {
+        traverseNode(document.body);
+        hideAds(document.body);
+      }
+
+      // Shadow DOM 兜底补丁（内部有 WeakSet 防重复）
+      patchUploadButtons();
+      patchQuickSearchComponents();
+
+      translateTitle();
+    } catch (e) {
+      console.warn('NexusMods 中文化插件：整页翻译执行失败', trigger, e);
+    }
+  }
+
+  /**
+   * 统一调度“整页重翻译”，支持多延迟重试 + 去重合并
+   * - refreshConfigOnce: 仅对最小 delay 的那次执行刷新页面配置（避免重试时反复清空缓存）
+   */
+  function scheduleFullTranslateRetries(trigger, delays, options) {
+    const opts = options || {};
+    const list = Array.isArray(delays) ? delays : [0];
+    if (!list.length) return;
+
+    // 找到最小 delay，用于 refreshConfigOnce
+    let minDelay = Infinity;
+    for (const d of list) {
+      const n = typeof d === 'number' ? d : 0;
+      if (n < minDelay) minDelay = n;
+    }
+
+    for (const delayRaw of list) {
+      const delay = typeof delayRaw === 'number' ? delayRaw : 0;
+      const shouldRefreshConfig =
+        !!opts.refreshConfig ||
+        (opts.refreshConfigOnce && delay === minDelay);
+
+      const existing = pendingFullTranslateByDelay.get(delay);
+      if (existing) {
+        // 合并触发原因 + 选项升级（例如后来的调用要求 refreshConfigOnce）
+        existing.trigger = existing.trigger || trigger;
+        existing.refreshConfig = existing.refreshConfig || shouldRefreshConfig;
+        continue;
+      }
+
+      const entry = {
+        timerId: null,
+        trigger,
+        refreshConfig: shouldRefreshConfig
+      };
+
+      entry.timerId = setTimeout(() => {
+        pendingFullTranslateByDelay.delete(delay);
+        runFullTranslate(entry.trigger, { refreshConfig: entry.refreshConfig });
+      }, Math.max(0, delay));
+
+      pendingFullTranslateByDelay.set(delay, entry);
+    }
+  }
+
+  /**
    * 处理任意根节点（document.body 或 shadowRoot）上的 DOM 变化
-   * - 对 URL 变化做简单节流，避免短时间内多次整页遍历
    * - 将同一批次 mutation 按类型聚合，减少重复遍历与广告查询
    * - 检测大规模 DOM 变化，触发完整页面翻译（修复表单提交后翻译失效问题）
    */
@@ -213,18 +348,8 @@
     const currentUrl = window.location.href;
     if (currentUrl !== lastUrl) {
       lastUrl = currentUrl;
-
-      const now = Date.now();
-      const shouldFullTranslate = now - lastUrlTranslateAt > 500;
-      if (shouldFullTranslate) {
-        lastUrlTranslateAt = now;
-        updatePageConfig('URL 变化');
-        if (document.body) {
-          traverseNode(document.body);
-          hideAds(document.body);
-        }
-        translateTitle();
-      }
+      // URL 变化：刷新页面配置并做一次整页翻译 + 若干重试（去重）
+      scheduleFullTranslateRetries('URL 变化', [0, 120, 350, 700], { refreshConfigOnce: true });
     }
 
     if (!mutations || mutations.length === 0) return;
@@ -258,14 +383,15 @@
       } else if (mutation.type === 'attributes') {
         const target = mutation.target;
         if (target && target.nodeType === Node.ELEMENT_NODE) {
-          attrTargets.add(target);
+          const attrName = mutation.attributeName;
+
           // 仅当样式 / 类名 / id 改变时，才认为可能影响广告可见性
-          if (
-            mutation.attributeName === 'style' ||
-            mutation.attributeName === 'class' ||
-            mutation.attributeName === 'id'
-          ) {
+          if (attrName === 'style' || attrName === 'class' || attrName === 'id') {
             adRoots.add(target);
+            // style/class/id 不需要跑 translateElementAttributes（它只翻译 value/placeholder/title/...）
+          } else {
+            // 其它属性变更：只翻译相关属性，不重跑整棵子树
+            attrTargets.add(target);
           }
         }
       }
@@ -277,17 +403,9 @@
     const isLargeChange = (totalAddedNodeCount + totalRemovedNodeCount) >= LARGE_CHANGE_THRESHOLD;
     
     if (isLargeChange) {
-      // 大规模变化，对整个页面重新翻译
-      const now = Date.now();
-      if (now - lastUrlTranslateAt > 200) { // 简单节流，避免短时间内多次全页翻译
-        lastUrlTranslateAt = now;
-        if (document.body) {
-          traverseNode(document.body);
-          hideAds(document.body);
-        }
-        translateTitle();
-        return; // 已经完整翻译过了，不需要再处理增量变化
-      }
+      // 大规模变化：对整个页面重新翻译（去重 + 多次重试）
+      scheduleFullTranslateRetries('大规模 DOM 更新', [0, 200, 600], { refreshConfig: false });
+      return; // 已经安排完整翻译，不需要再处理增量变化
     }
 
     // 正常的增量处理流程
@@ -468,30 +586,9 @@
     currentDict = Object.assign({}, normalizedPublicDict, pageDict);
   }
 
-  /**
-   * 重新识别页面并构建词典
-   */
-  function updatePageConfig(trigger) {
-    const newType = detectPageType();
-    const pageTypeChanged = newType !== currentPageType;
-
-    // 无论页面类型是否为 null，都更新当前类型并重建词典（至少保证 public 生效）
-    currentPageType = newType;
-    buildPageDict(currentPageType);
-
-    // 页面配置变化时清空翻译相关缓存，避免旧页面结果干扰新页面
-    translationCache.clear();
-    textNodeCache = new WeakMap();
-
-    // 只有在页面类型发生变化时，才对整页重新翻译，避免过于频繁
-    if (pageTypeChanged) {
-      if (document.body) {
-        traverseNode(document.body);
-      }
-      translateTitle();
-      console.log(`NexusMods 中文化插件：${trigger} 触发，页面类型 = ${currentPageType || 'unknown'}`);
-    }
-  }
+  // NOTE:
+  // `updatePageConfig` 已在文件前部重构为“仅刷新页面类型与词典（不直接遍历 DOM）”。
+  // 整页遍历/重试由 `runFullTranslate` + `scheduleFullTranslateRetries` 统一调度，避免重复全页翻译。
 
   /**
    * 文本翻译：先完整匹配词典，再用字典里配置的正则做动态替换
@@ -1214,12 +1311,8 @@
         if (document.body) {
           clearInterval(intervalId);
           observeRoot(document.body);
-          // 初次翻译
-          updatePageConfig('body 就绪');
-          // 补丁：body 就绪后再修正一次 Upload 按钮
-          patchUploadButtons();
-          // 补丁：body 就绪后再修正一次 quick-search 搜索按钮
-          patchQuickSearchComponents();
+          // body 就绪后做一次整页翻译（并做少量重试，去重）
+          scheduleFullTranslateRetries('body 就绪', [0, 120, 400], { refreshConfigOnce: true });
         }
       }, 50);
     }
@@ -1240,27 +1333,8 @@
         const navLink = target.closest('.nav.nav-old .nav-link');
         if (!navLink) return;
 
-        // 给页面一点时间完成内容切换，再进行翻译
-        setTimeout(() => {
-          if (document.body) {
-            traverseNode(document.body);
-          }
-          translateTitle();
-        }, 80);
-
-        // 再在短时间内多次重跑翻译，防止站点脚本后续覆盖文本导致“闪一下又变回英文”
-        let rerunCount = 0;
-        const maxRerun = 5; // 最多额外执行 5 次
-        const intervalId = setInterval(() => {
-          if (document.body) {
-            traverseNode(document.body);
-          }
-          translateTitle();
-          rerunCount += 1;
-          if (rerunCount >= maxRerun) {
-            clearInterval(intervalId);
-          }
-        }, 250);
+        // 给页面一点时间完成内容切换，再进行翻译；并做多次重试，防止站点脚本覆盖文案
+        scheduleFullTranslateRetries('旧标签栏切换', [80, 250, 500, 750, 1000, 1250], { refreshConfig: false });
       },
       true // 捕获阶段，以免被站点自己的事件提前阻止
     );
@@ -1274,27 +1348,8 @@
     document.addEventListener(
       'submit',
       (event) => {
-        // 给页面时间处理表单提交和更新内容
-        setTimeout(() => {
-          if (document.body) {
-            traverseNode(document.body);
-            hideAds(document.body);
-          }
-          translateTitle();
-        }, 100);
-
-        // 多次重试翻译，确保动态加载的内容也能被翻译
-        let rerunCount = 0;
-        const maxRerun = 3;
-        const intervalId = setInterval(() => {
-          if (document.body) {
-            traverseNode(document.body);
-          }
-          rerunCount += 1;
-          if (rerunCount >= maxRerun) {
-            clearInterval(intervalId);
-          }
-        }, 300);
+        // 提交后页面通常会异步更新内容：延迟翻译 + 少量重试（不刷新词典，避免清空缓存）
+        scheduleFullTranslateRetries('表单提交', [120, 420, 720, 1020], { refreshConfig: false });
       },
       true // 捕获阶段
     );
@@ -1333,22 +1388,9 @@
           // URL 解析失败，可能是相对路径，继续处理
         }
 
-        // 检测到站内链接点击，延迟后强制翻译
-        // 使用多个不同的延迟时间，确保能捕获到页面内容
-        const delays = [100, 300, 500, 800, 1200];
-        
-        delays.forEach((delay) => {
-          setTimeout(() => {
-            // 强制重置节流时间戳，确保翻译能够执行
-            lastUrlTranslateAt = 0;
-            updatePageConfig('站内链接跳转');
-            if (document.body) {
-              traverseNode(document.body);
-              hideAds(document.body);
-            }
-            translateTitle();
-          }, delay);
-        });
+        // 兜底：部分跳转场景下，DOM 变化/History hook 可能滞后，这里做少量延迟重翻译
+        // 注意：不在这里刷新词典，词典刷新由 URL/History 变化统一处理，避免过早清空缓存
+        scheduleFullTranslateRetries('站内链接点击(兜底)', [150, 450, 900], { refreshConfig: false });
       },
       true // 捕获阶段
     );
@@ -1363,20 +1405,8 @@
     const originalReplaceState = history.replaceState;
 
     function afterHistoryChange() {
-      // 使用多个延迟时间进行翻译重试
-      const delays = [50, 150, 300, 600];
-      
-      delays.forEach((delay) => {
-        setTimeout(() => {
-          lastUrlTranslateAt = 0;
-          updatePageConfig('History API 变化');
-          if (document.body) {
-            traverseNode(document.body);
-            hideAds(document.body);
-          }
-          translateTitle();
-        }, delay);
-      });
+      // History API 变化通常意味着 SPA 路由跳转：刷新词典一次 + 若干重试
+      scheduleFullTranslateRetries('History API 变化', [0, 80, 200, 450, 900], { refreshConfigOnce: true });
     }
 
     history.pushState = function(...args) {
@@ -1461,7 +1491,7 @@
         location.href = data.url;
       }
     } catch (e2) {
-      console.exception(e2);
+      console.error(e2);
       location.href = this.href;
     }
   }
@@ -1553,16 +1583,10 @@
     // 设置文档语言为中文
     document.documentElement.lang = CONFIG.LANG;
 
-    // 初次配置与翻译
-    updatePageConfig('首次载入');
-    // 对初次加载的页面做一次遍历翻译，保证即使 pageType 为 null 也能应用 public 词条
-    if (document.body) {
-      traverseNode(document.body);
-      hideAds(document.body);
-      // 补丁：强制修正一次 Upload 按钮（Shadow DOM）
-      patchUploadButtons();
-    }
-    translateTitle();
+    // 初次配置与翻译：刷新词典一次，然后整页翻译
+    runFullTranslate('首次载入', { refreshConfig: true });
+    // 再做少量重试，覆盖异步渲染的区域（不刷新词典，避免反复清空缓存）
+    scheduleFullTranslateRetries('首次载入(重试)', [150, 500, 900], { refreshConfig: false });
 
     // Hook History API，监听 SPA 路由变化
     hookHistoryAPI();

@@ -398,32 +398,78 @@
     'This author has not specified whether they have used assets from other authors or not': '这个作者没有指定他们是否使用了其他作者的资产。',
     'Please': '请',
     'to find out whether this mod is receiving Donation Points': '来确认这个模组是否赚取捐赠点数',
-    'Other user\'s assets': '其他用户资产',
-    'All the assets in this file belong to the author, or are from free-to-use modder\'s resources': '此文件中的所有资产属于作者，或来自免费使用的模组作者的资源。',
-    'Some assets in this file belong to other authors. You will need to seek permission from': '此文件中的一些资产属于其他作者。你需要从他们那里寻求许可。',
+    'Other user\'s assets': '其他作者的资产',
+
+    'All the assets in this file belong to the author, or are from free-to-use modder\'s resources':
+    '此文件中的所有资产均属于作者本人，或来自可自由使用的模组作者资源',
+
+    'Some assets in this file belong to other authors. You will need to seek permission from':
+    '此文件中的部分资产属于其他作者，你需要向对应作者取得授权',
+
     'Upload permission': '上传权限',
-    'You are not allowed to upload this file to other sites under any circumstances': '你不得在任何情况下将此文件上传到其他网站。',
-    'You can upload this file to other sites but you must credit me as the creator of the file': '你可以将此文件上传到其他网站，但你必须注明我是文件的创作者。',
+
+    'You are not allowed to upload this file to other sites under any circumstances':
+    '在任何情况下都禁止将此文件上传到其他网站',
+
+    'You can upload this file to other sites but you must credit me as the creator of the file':
+    '你可以将此文件上传到其他网站，但必须注明我是原作者',
+
     'Modification permission': '修改权限',
-    'You must get permission from me before you are allowed to modify my files to improve it': '你必须在获得我的许可之前，才能修改我的文件以改进它',
-    'You are allowed to modify my files and release bug fixes or improve on the features without permission from or credit to me': '你被允许修改我的文件并发布漏洞修复或改进功能，而不需要我的许可或信用。',
-    'You are allowed to modify my files and release bug fixes or improve on the features so long as you credit me as the original creator': '你被允许修改我的文件并发布漏洞修复或改进功能，只要注明我是原始创作者。',
+
+    'You must get permission from me before you are allowed to modify my files to improve it':
+    '在修改我的文件（包括优化和改进）之前，必须事先获得我的许可',
+
+    'You are allowed to modify my files and release bug fixes or improve on the features without permission from or credit to me':
+    '你可以修改我的文件并发布漏洞修复或功能改进，无需征得我的许可，也无需署名',
+
+    'You are allowed to modify my files and release bug fixes or improve on the features so long as you credit me as the original creator':
+    '你可以修改我的文件并发布漏洞修复或功能改进，但必须注明我是原作者',
+
     'Conversion permission': '转换权限',
-    'You are not allowed to convert this file to work on other games under any circumstances': '你不得在任何情况下将此文件转换为在其他游戏上工作。',
-    'You can convert this file to work with other games as long as you credit me as the creator of the file': '你可以将此文件转换为在其他游戏上工作，只要注明我是文件的创作者。',
+
+    'You are not allowed to convert this file to work on other games under any circumstances':
+    '在任何情况下都禁止将此文件转换用于其他游戏',
+
+    'You can convert this file to work with other games as long as you credit me as the creator of the file':
+    '你可以将此文件转换用于其他游戏，但必须注明我是原作者',
+
     'Asset use permission': '资产使用权限',
-    'You are allowed to use the assets in this file without permission or crediting me': '你被允许使用此文件中的资产，而不需要我的许可或信用。',
-    'You are allowed to use the assets in this file in mods/files that are being sold, for money, on Steam Workshop or other platforms': '你被允许在销售中的模组/文件中使用此文件中的资产，用于金钱，在 Steam Workshop 或其他平台上。',
-    'You must get permission from me before you are allowed to use any of the assets in this file': '你必须在获得我的许可之前，才能使用此文件中的任何资产',
-    'You are allowed to use the assets in this file without permission as long as you credit me': '你被允许使用此文件中的资产，而不需要我的许可，只要注明我是创作者。',
-    'Asset use permission in mods/files that are being sold': '在销售中的模组/文件中使用资产的权限',
-    'You are not allowed to use assets from this file in any mods/files that are being sold, for money, on Steam Workshop or other platforms': '你不得将本文件中的任何素材用于需要付费购买的模组/文件，包括发布在 Steam 创意工坊或其他平台上。',
-    'Asset use permission in mods/files that earn donation points': '在模组/文件中使用资产以赚取捐赠点数的权限',
-    'You are not allowed to earn Donation Points for your mods if they use my assets': '你不得为使用我的资产的模组赚取捐赠点数',
-    'You are allowed to earn Donation Points for your mods if they use my assets': '你被允许为使用我的资产的模组赚取捐赠点数',
-    'You must get permission to earn Donation Points for your mods if they use my assets': '如果你的模组使用了我的素材，你必须获得我的许可才能赚取捐赠点数',
-    'You are not allowed to modify my files, including creating bug fixes or improving on features under any circumstances': '你不得修改我的文件，包括创建漏洞修复或改进功能，在任何情况下。',
-    'You are not allowed to use assets from this file under any circumstances': '你不得在任何情况下使用此文件中的资产。',
+
+    'You are allowed to use the assets in this file without permission or crediting me':
+    '你可以使用此文件中的资产，无需征得我的许可，也无需署名',
+
+    'You are allowed to use the assets in this file in mods/files that are being sold, for money, on Steam Workshop or other platforms':
+    '你可以在收费出售的模组或文件中使用此文件的资产，包括 Steam 创意工坊或其他平台',
+
+    'You must get permission from me before you are allowed to use any of the assets in this file':
+    '在使用此文件中的任何资产之前，必须先获得我的许可',
+
+    'You are allowed to use the assets in this file without permission as long as you credit me':
+    '你可以使用此文件中的资产，无需征得我的许可，但必须署名原作者',
+
+    'Asset use permission in mods/files that are being sold':
+    '在收费模组或文件中使用资产的权限',
+
+    'You are not allowed to use assets from this file in any mods/files that are being sold, for money, on Steam Workshop or other platforms':
+    '禁止将此文件中的任何资产用于收费出售的模组或文件，包括 Steam 创意工坊或其他平台',
+
+    'Asset use permission in mods/files that earn donation points':
+    '在可获取捐赠点数的模组或文件中使用资产的权限',
+
+    'You are not allowed to earn Donation Points for your mods if they use my assets':
+    '如果你的模组使用了我的资产，则禁止获取捐赠点数',
+
+    'You are allowed to earn Donation Points for your mods if they use my assets':
+    '如果你的模组使用了我的资产，则允许获取捐赠点数',
+
+    'You must get permission to earn Donation Points for your mods if they use my assets':
+    '如果你的模组使用了我的资产，必须获得我的许可才能获取捐赠点数',
+
+    'You are not allowed to modify my files, including creating bug fixes or improving on features under any circumstances':
+    '在任何情况下都禁止修改我的文件，包括制作漏洞修复或功能改进',
+
+    'You are not allowed to use assets from this file under any circumstances':
+    '在任何情况下都禁止使用此文件中的资产',
     'Author notes': '作者备注',
     'This author has not provided any additional notes regarding file permissions': '这个作者没有提供任何关于文件权限的额外备注',
     'File credits': '文件信用',
@@ -700,7 +746,7 @@
     'Last post': '最后回复',
     'Replies': '回复',
     'Loading issue...': '加载问题...',
-    'No issues reported at this time.': '目前没有报告的问题。',
+    'No issues reported at this time.': '目前没有报告的漏洞。',
 
     // 模组日志详情页
     'Activity logs': '活动日志',
@@ -2826,6 +2872,42 @@
     'Collections are a quick way to install a group of mods that "just work".': '合集是一种快速安装一整组“即装即用”模组的方式。',
     'Prefer to mod manually?': '更喜欢手动模组？',
 
+    'Something went wrong': '出错了',
+    'If the issue persists, please contact our': '如果问题持续存在，请联系我们的',
+    'support team.': '支持团队。',
+    'Check status page': '检查状态页面',
+    'Update files': '更新文件',
+    'The author has locked this comment topic for the time being': '作者暂时锁定了这个评论话题',
+    'Are you enjoying the mods you\'ve downloaded? Endorsing a mod shows your support for the author who created it and helps other users discover quality content. It only takes a few seconds.': '你下载的模组使用愉快吗？认可模组表示你对作者的支持，并帮助其他用户发现高质量内容。只需几秒钟。',
+    'Below is a list of mods that you have yet to rate. Give the ones you like a thumbs up. You can change how often you see this reminder in your': '下面是一些你尚未评分的模组。给喜欢的模组点赞。你可以在你的',
+    'preferences': '设置中更改',
+    'This mod contains adult content': '这个模组包含成人内容',
+    'There are no reported bugs': '没有报告的漏洞',
+
+    'Bold': '加粗',
+    'Italic': '斜体',
+    'Underline': '下划线',
+    'Strike': '删除线',
+    'Code': '代码',
+    'Quote': '引用',
+  
+    'Insert image': '插入图片',
+    'Insert YouTube': '插入 YouTube 视频',
+    'Link': '链接',
+  
+    '• Unordered list': '• 无序列表',
+    '1. Ordered list': '1. 有序列表',
+  
+    'Font color': '字体颜色',
+    'Font size': '字号',
+    'Font family': '字体',
+  
+    'Align left': '左对齐',
+    'Align center': '居中对齐',
+    'Align right': '右对齐',
+    'Remove Format': '删除格式',
+  
+
 
 
 });
@@ -3003,6 +3085,11 @@
     [
       '^Title: (.+)$',
       '标题：$1'
+    ],
+    // See 1 more mod you haven't endorsed yet in your download history...
+    [
+      "^See ([0-9,]+) more mods you haven't endorsed yet in your download history(?:…|\\.\\.\\.)?$",
+      '在下载记录中还有 $1 个你尚未认可的模组…'
     ],
 
     // Open Community · 2833 members · Last active
