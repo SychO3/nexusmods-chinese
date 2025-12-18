@@ -2906,6 +2906,12 @@
     'Align center': '居中对齐',
     'Align right': '右对齐',
     'Remove Format': '删除格式',
+
+    'In review': '审核中',
+
+    'The Fallout Modathon': 'Fallout Modathon',
+    'Fallout Season 2 Has Arrived': 'Fallout 第二季已经到来',
+    'Discover new mods, curated collections and your Fallout character match.': '发现新的模组、精选合集和你的 Fallout 角色匹配。',
   
 
 
@@ -3164,6 +3170,11 @@
     [
       '^Uploader: (.+)$',
       '上传者：$1'
+    ],
+    // Your password was last updated 4 months ago.
+    [
+      '^Your password was last updated (.+) months ago.$',
+      '你的密码最后一次更新于 $1 个月前'
     ],
     // 游戏图片分类标题："Stardew Valley images" -> "Stardew Valley 图片"
     [
