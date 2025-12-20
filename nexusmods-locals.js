@@ -2912,7 +2912,20 @@
     'The Fallout Modathon': 'Fallout Modathon',
     'Fallout Season 2 Has Arrived': 'Fallout 第二季已经到来',
     'Discover new mods, curated collections and your Fallout character match.': '发现新的模组、精选合集和你的 Fallout 角色匹配。',
-  
+
+    'Signed out successfully.': '已成功退出。',
+    'You need to sign in or sign up before continuing.': '你需要登录或注册才能继续。',
+    'Your session has expired': '你的会话已过期',
+    'Please login to continue.': '请登录以继续。',
+    'Login': '登录',
+    '70 Million': '7000万',
+    'Existing user? Sign In': '已有账户？登录',
+    'Sign Up': '注册',
+    'This Forum': '这个论坛',
+
+    'Staff Directory': '管理员目录',
+    'Community Managers': '社区管理员',
+    'Nexus Mods Staff': 'Nexus Mods 管理员',
 
 
 
@@ -3108,6 +3121,24 @@
     [
       '^Description: (.+)$',
       '描述：$1'
+    ],
+
+    // Viewing Topic: *
+    [
+      '^Viewing Topic: (.+)$',
+      '查看主题：$1'
+    ],
+
+    // Viewing Forum: *
+    [
+      '^Viewing Forum: (.+)$',
+      '查看论坛：$1'
+    ],
+
+    // Creating Topic in: *
+    [
+      '^Creating Topic in: (.+)$',
+      '创建主题在：$1'
     ],
 
     // Viewing Topic: *
